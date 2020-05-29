@@ -1,5 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using Helpers;
+﻿using Helpers;
 using UnityEngine;
 
 namespace Characters
@@ -7,7 +6,7 @@ namespace Characters
     public class Enemy : Character
     {
         [SerializeField] private bool shouldMove;
-        [SerializeField] private float movementSpeed;
+        [SerializeField] private MinMaxFloat minMaxMovementSpeed;
         [SerializeField] private int damage;
         [SerializeField] private float timeBetweenAttacks;
         [SerializeField] private float attackDistance;
@@ -15,10 +14,16 @@ namespace Characters
         [SerializeField] private Player player;
 
         private Vector3 _targetPosition;
-        
+
+        private float _movementSpeed;
         private bool _canHit;
         private bool _canAttack;
         private float _attackTimer;
+
+        private void Awake()
+        {
+            _movementSpeed = minMaxMovementSpeed.RandomBetween();
+        }
 
         public bool ShouldMove
         {
@@ -72,7 +77,7 @@ namespace Characters
             }
             else
             {
-                transform.position -= transform.right * (movementSpeed * Time.deltaTime);
+                transform.position -= transform.right * (_movementSpeed * Time.deltaTime);
                 _canHit = false;
             }
         }
