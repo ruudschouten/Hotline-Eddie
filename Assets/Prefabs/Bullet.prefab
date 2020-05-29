@@ -76,7 +76,8 @@ MonoBehaviour:
   renderer: {fileID: 5391602464434476037}
   collider: {fileID: 5391602464434476032}
   shouldUpdate: 0
-  speed: 25
+  damage: 2
+  speed: 50
   timesToPierce: 1
 --- !u!212 &5391602464434476037
 SpriteRenderer:
@@ -147,5 +148,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0

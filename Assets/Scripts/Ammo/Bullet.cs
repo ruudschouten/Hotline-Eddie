@@ -1,4 +1,5 @@
 ﻿using System;
+using Characters;
 using Core;
 using NaughtyAttributes;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class Bullet : MonoRenderer
 {
     [SerializeField] private bool shouldUpdate;
+    [SerializeField] private int damage;
     [SerializeField] private float speed;
     [SerializeField] private float timesToPierce;
 
@@ -23,10 +25,10 @@ public class Bullet : MonoRenderer
         {
             return;
         }
-        
-        // transform.Translate(0, 0, speed * Time.deltaTime, Space.Self);
-        
-        rigidbody.AddRelativeForce(new Vector2(0, speed * Time.deltaTime), ForceMode2D.Impulse);
+
+        transform.position += transform.up * (speed * Time.deltaTime);
+
+        // rigidbody.AddRelativeForce(new Vector2(0, speed * Time.deltaTime), ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +42,12 @@ public class Bullet : MonoRenderer
         if (other.CompareTag("Enemy"))
         {
             // Damage enemy
+            var enemy = other.GetComponent<Enemy>();
+            if (enemy.IsDead)
+            {
+                return;
+            }
+            enemy.GetHit(damage);
             
             _enemiesPierced++;
 
