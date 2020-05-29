@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &131452810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131452811}
+  m_Layer: 0
+  m_Name: Bullet Emit Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &131452811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131452810}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.333, y: -0.104, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 952122207}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &487448817
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,10 +216,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  deadSprite: {fileID: 21300000, guid: 8fc446b113d87a24ebc082aa875b50f8, type: 3}
-  target: {fileID: 952122207}
   shouldMove: 1
   movementSpeed: 4
+  damage: 2
+  attackDistance: 0.5
+  deadSprite: {fileID: 21300000, guid: 8fc446b113d87a24ebc082aa875b50f8, type: 3}
+  player: {fileID: 952122208}
 --- !u!212 &487448820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -438,6 +470,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1224065100}
+  - {fileID: 131452811}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -500,7 +533,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3fafd7ea567a2ed4bbb114f25285e1de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e094f1809e4b541419790db4e8a04172, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -528,7 +561,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.453125, y: 0.65625}
+    oldSize: {x: 3, y: 2}
     newSize: {x: 0.93, y: 0.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -604,6 +637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
   player: {fileID: 952122208}
+  angleOffset: 0
+  bulletEmitTransform: {fileID: 131452811}
   bulletPrefab: {fileID: 5391602464434476035, guid: 9e4db128a741b1a44b82ac179f49a4a1,
     type: 3}
   movementSpeed: 3
