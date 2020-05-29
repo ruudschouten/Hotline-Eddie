@@ -9,6 +9,8 @@ namespace Characters
     {
         [SerializeField] private new Camera camera;
         [SerializeField] private Player player;
+        [SerializeField] private float angleOffset;
+        [SerializeField] private Transform bulletEmitTransform;
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private float movementSpeed;
         [SerializeField] private float timeBetweenShots;
@@ -95,7 +97,7 @@ namespace Characters
 
         private void Shoot()
         {
-            var bullet = Instantiate(bulletPrefab, player.transform.position, player.transform.rotation);
+            var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position, bulletEmitTransform.rotation);
             bullet.ShouldUpdate = true;
             
             _canShoot = false;
@@ -104,7 +106,7 @@ namespace Characters
         private void LookAtMouse()
         {
             _cursorPosition = camera.ScreenToWorldPoint(Input.mousePosition);
-            var angle = LookAtHelper.GetAngleAtTarget(_cursorPosition, player.transform.localPosition) - 90;
+            var angle = LookAtHelper.GetAngleAtTarget(_cursorPosition, player.transform.localPosition) - angleOffset;
             player.transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
     }
