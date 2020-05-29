@@ -24,5 +24,21 @@ namespace Characters
                 onDeath.Invoke();
             }
         }
+
+        protected void Update()
+        {
+            var euler = transform.rotation.eulerAngles;
+
+            renderer.flipY = euler.z > 90 && euler.z < 270;
+
+            if (euler.z >= 360)
+            {
+                euler.z -= 360;
+            }
+            if(euler.z <= 360)
+            {
+                euler.z += 360;
+            }
+        }
     }
 }
