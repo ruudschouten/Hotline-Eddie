@@ -27,8 +27,6 @@ public class Bullet : MonoRenderer
         }
 
         transform.position += transform.up * (speed * Time.deltaTime);
-
-        // rigidbody.AddRelativeForce(new Vector2(0, speed * Time.deltaTime), ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

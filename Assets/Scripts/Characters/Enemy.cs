@@ -5,7 +5,7 @@ namespace Characters
 {
     public class Enemy : Character
     {
-        [SerializeField] private Texture2D deadTexture;
+        [SerializeField] private Sprite deadSprite;
         [SerializeField] private Transform target;
         [SerializeField] private bool shouldMove;
         [SerializeField] private float movementSpeed;
@@ -39,6 +39,11 @@ namespace Characters
         {
             var angle = LookAtHelper.GetAngleAtTarget(target.position, transform.localPosition) - 180;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        public void ShowDeadTexture()
+        {
+            renderer.sprite = deadSprite;
         }
     }
 }

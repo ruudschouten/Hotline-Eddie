@@ -1,5 +1,7 @@
 ﻿using Core;
+using UnityEditor.Connect;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Characters
 {
@@ -7,6 +9,8 @@ namespace Characters
     {
         [SerializeField] protected int maxHealth;
         [SerializeField] protected int health;
+
+        [SerializeField] protected UnityEvent onDeath;
 
         public bool IsDead => health <= 0;
         
@@ -17,6 +21,7 @@ namespace Characters
             if (IsDead)
             {
                 Debug.Log($"I have died {transform.name}");
+                onDeath.Invoke();
             }
         }
     }
