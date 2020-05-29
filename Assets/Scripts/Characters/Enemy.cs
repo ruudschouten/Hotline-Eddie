@@ -1,16 +1,24 @@
-﻿using Helpers;
+﻿using System.Net.NetworkInformation;
+using Helpers;
 using UnityEngine;
 
 namespace Characters
 {
     public class Enemy : Character
     {
-        [SerializeField] private Sprite deadSprite;
-        [SerializeField] private Transform target;
         [SerializeField] private bool shouldMove;
         [SerializeField] private float movementSpeed;
+        [SerializeField] private int damage;
+        [SerializeField] private float timeBetweenAttacks;
+        [SerializeField] private float attackDistance;
+        [SerializeField] private Sprite deadSprite;
+        [SerializeField] private Player player;
 
         private Vector3 _targetPosition;
+        
+        private bool _canHit;
+        private bool _canAttack;
+        private float _attackTimer;
 
         public bool ShouldMove
         {
@@ -24,6 +32,8 @@ namespace Characters
             {
                 return;
             }
+
+            base.Update();
             
             LookAt();
             
@@ -32,18 +42,54 @@ namespace Characters
                 return;
             }
 
-            transform.position -= transform.right * (movementSpeed * Time.deltaTime);
+            if (_canHit)
+            {
+                if (_canAttack)
+                {
+                    Attack();
+                }
+                else
+                {
+                    _attackTimer += Time.deltaTime;
+                    if (_attackTimer >= timeBetweenAttacks)
+                    {
+                        _canAttack = true;
+                    }
+                }
+            }
+
+
+            var dist = Vector3.Distance(transform.position, player.transform.position);
+            if (dist <= attackDistance)
+            {
+                _canHit = true;
+            }
+            else
+            {
+                transform.position -= transform.right * (movementSpeed * Time.deltaTime);
+                _canHit = false;
+            }
+        }
+
+        private void Attack()
+        {
+            player.GetHit(damage);
+            _canHit = false;
+            _canAttack = false;
+            _attackTimer = 0f;
         }
 
         protected void LookAt()
         {
-            var angle = LookAtHelper.GetAngleAtTarget(target.position, transform.localPosition) - 180;
+            var angle = LookAtHelper.GetAngleAtTarget(player.transform.position, transform.localPosition) - 180;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
 
-        public void ShowDeadTexture()
+        public void OnDeath()
         {
             renderer.sprite = deadSprite;
+            collider.enabled = false;
+            renderer.sortingOrder = -1;
         }
     }
 }
