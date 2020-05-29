@@ -26,6 +26,12 @@ namespace Characters
             set => shouldMove = value;
         }
 
+        public Player Player
+        {
+            get => player;
+            set => player = value;
+        }
+
         private void Update()
         {
             if (IsDead)
