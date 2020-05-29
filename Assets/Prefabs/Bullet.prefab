@@ -76,7 +76,7 @@ MonoBehaviour:
   renderer: {fileID: 5391602464434476037}
   collider: {fileID: 5391602464434476032}
   shouldUpdate: 0
-  damage: 2
+  damage: 5
   speed: 50
   timesToPierce: 1
 --- !u!212 &5391602464434476037
