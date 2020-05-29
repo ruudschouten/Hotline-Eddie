@@ -1,4 +1,5 @@
 ﻿using System;
+using Helpers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -103,10 +104,8 @@ namespace Characters
         private void LookAtMouse()
         {
             _cursorPosition = camera.ScreenToWorldPoint(Input.mousePosition);
-            var radians = Mathf.Atan2(_cursorPosition.y - player.transform.localPosition.y,
-                _cursorPosition.x - player.transform.localPosition.x);
-            var degrees = (180 / Mathf.PI) * radians;
-            player.transform.localRotation = Quaternion.Euler(0, 0, degrees - 90);
+            var angle = LookAtHelper.GetAngleAtTarget(_cursorPosition, player.transform.localPosition) - 90;
+            player.transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
     }
 }
