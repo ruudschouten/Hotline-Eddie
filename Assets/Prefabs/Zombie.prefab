@@ -60,6 +60,7 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: 0e0d29e699e91684e8ab59125c22e751, type: 3}
   - {fileID: 8300000, guid: ec55a804752257e4d9fe30f1252c7f23, type: 3}
+  - {fileID: 8300000, guid: 08b419cdd3e86e241b622b7e222a4190, type: 3}
   onHitTarget:
     m_PersistentCalls:
       m_Calls: []
