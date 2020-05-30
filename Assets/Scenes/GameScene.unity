@@ -956,8 +956,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ec55a804752257e4d9fe30f1252c7f23, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 787315073}
-        m_MethodName: PlayClip
+        m_MethodName: PlayAfterHalfASecond
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 415b9ea6cdd0cf045bd21084f694591c,
@@ -2627,7 +2627,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 787315073}
-        m_MethodName: PlayClip
+        m_MethodName: PlayAfterHalfASecond
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 415b9ea6cdd0cf045bd21084f694591c,
@@ -3125,7 +3125,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 787315073}
-        m_MethodName: PlayClip
+        m_MethodName: PlayAfterHalfASecond
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 415b9ea6cdd0cf045bd21084f694591c,
@@ -3498,7 +3498,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 787315073}
-        m_MethodName: PlayClip
+        m_MethodName: PlayAfterHalfASecond
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: 415b9ea6cdd0cf045bd21084f694591c,
