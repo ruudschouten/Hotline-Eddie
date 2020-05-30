@@ -7,10 +7,12 @@ using Random = UnityEngine.Random;
 public class Wave : MonoBehaviour
 {
     [SerializeField] private EnemyAmountDictionary enemies;
+    [SerializeField] private ConsumableAmountDictionary consumables;
+    [SerializeField] private Rect areaSize;
     [SerializeField] private Player player;
     [SerializeField] private AudioSource musicPlayer;
     [SerializeField] private AudioClip waveMusic;
-    [SerializeField] private Transform[] spawnLocations;
+    [SerializeField] private Transform[] enemySpawnLocations;
     [SerializeField] private bool hasNextWave;
 
     [SerializeField] [ShowIf("hasNextWave")]
@@ -64,14 +66,32 @@ public class Wave : MonoBehaviour
             StartWaveMusic();
         }
         
-        foreach (var keyPair in enemies)
+        SpawnEnemies();
+        SpawnConsumables();
+    }
+    
+    private void SpawnEnemies()
+    {
+        foreach (var pair in enemies)
         {
-            for (var i = 0; i < keyPair.Value; i++)
+            for (var i = 0; i < pair.Value; i++)
             {
-                var enemy = Instantiate(keyPair.Key, GetRandomPosition(), Quaternion.identity);
-                enemy.ShouldMove = true;
+                var enemy = Instantiate(pair.Key, GetRandomPosition(), Quaternion.identity);
+                enemy.Initialize(player);
                 enemy.OnDeathEvent.AddListener(EnemyKilled);
-                enemy.Player = player;
+            }
+        }
+    }
+
+    private void SpawnConsumables()
+    {
+        foreach (var pair in consumables)
+        {
+            for (var i = 0; i < pair.Value; i++)
+            {
+                var consumable = Instantiate(pair.Key);
+                consumable.transform.localPosition = GetRandomPositionOnArea();
+                consumable.Initialize(player);
             }
         }
     }
@@ -86,8 +106,15 @@ public class Wave : MonoBehaviour
         }
     }
 
+    private Vector2 GetRandomPositionOnArea()
+    {
+        var x = Random.Range(areaSize.x, areaSize.y);
+        var y = Random.Range(areaSize.width, areaSize.height);
+        return new Vector2(x, y);
+    }
+
     private Vector3 GetRandomPosition()
     {
-        return spawnLocations[Random.Range(0, spawnLocations.Length)].position;
+        return enemySpawnLocations[Random.Range(0, enemySpawnLocations.Length)].position;
     }
 }
