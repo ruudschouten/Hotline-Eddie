@@ -104,7 +104,6 @@ namespace Characters
         {
             renderer.sprite = deadSprite;
             collider.enabled = false;
-            renderer.sortingOrder = -1;
         }
     }
 }
