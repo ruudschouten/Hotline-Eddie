@@ -5,22 +5,20 @@ namespace Characters
 {
     public class Enemy : Character
     {
-        [SerializeField] private bool shouldMove;
-        [SerializeField] private MinMaxFloat minMaxMovementSpeed;
-        [SerializeField] private int damage;
-        [SerializeField] private float timeBetweenAttacks;
-        [SerializeField] private float attackDistance;
-        [SerializeField] private Sprite deadSprite;
-        [SerializeField] private Player player;
-
-        private Vector3 _targetPosition;
+        [SerializeField] protected bool shouldMove;
+        [SerializeField] protected MinMaxFloat minMaxMovementSpeed;
+        [SerializeField] protected int meleeDamage;
+        [SerializeField] protected float timeBetweenAttacks;
+        [SerializeField] protected float meleeDistance;
+        [SerializeField] protected Sprite deadSprite;
+        [SerializeField] protected Player player;
 
         private float _movementSpeed;
         private bool _canHit;
         private bool _canAttack;
         private float _attackTimer;
 
-        private void Awake()
+        protected void Awake()
         {
             base.Awake();
 
@@ -33,7 +31,7 @@ namespace Characters
             this.player = player;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (IsDead)
             {
@@ -41,7 +39,7 @@ namespace Characters
             }
 
             // Call Character.Update so the sprite flips when it would otherwise appear upside down.
-            base.Update();
+            FlipTextureIfNeeded();
 
             LookAt();
 
@@ -58,31 +56,36 @@ namespace Characters
                 }
                 else
                 {
-                    _attackTimer += Time.deltaTime;
-                    if (_attackTimer >= timeBetweenAttacks)
-                    {
-                        _canAttack = true;
-                    }
+                    _canAttack = AdvanceAndCheckTimer(ref _attackTimer, timeBetweenAttacks);
                 }
             }
 
+            AttackOrMove();
+        }
 
+        private void AttackOrMove()
+        {
             var dist = Vector3.Distance(transform.position, player.transform.position);
-            if (dist <= attackDistance)
+            if (dist <= meleeDistance)
             {
                 _canHit = true;
             }
             else
             {
-                transform.position -= transform.right * (_movementSpeed * Time.deltaTime);
                 _canHit = false;
+                Move();
             }
+        }
+
+        protected void Move()
+        {
+            transform.position -= transform.right * (_movementSpeed * Time.deltaTime);
         }
 
         private void Attack()
         {
             onHitTarget.Invoke();
-            player.GetHit(damage);
+            player.GetHit(meleeDamage);
             _canHit = false;
             _canAttack = false;
             _attackTimer = 0f;
@@ -92,6 +95,12 @@ namespace Characters
         {
             var angle = LookAtHelper.GetAngleAtTarget(player.transform.position, transform.localPosition) - 180;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
+        }
+
+        protected bool AdvanceAndCheckTimer(ref float timer, float valueToHit)
+        {
+            timer += Time.deltaTime;
+            return timer >= valueToHit;
         }
 
         public void OnDeath()

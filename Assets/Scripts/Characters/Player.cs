@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Characters
@@ -17,6 +18,11 @@ namespace Characters
         {
             OnDeathEvent.AddListener(() => PlayRandomClip(deathSounds));
             OnShoot.AddListener(() => PlayRandomClip(hitSounds));
+        }
+
+        private void Update()
+        {
+            FlipTextureIfNeeded();
         }
 
         public void Heal(int amount)

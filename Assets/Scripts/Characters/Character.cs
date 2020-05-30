@@ -10,6 +10,7 @@ namespace Characters
         [SerializeField] protected int health;
 
         [Space] [SerializeField] protected AudioSource source;
+        [SerializeField] private Vector2 minMaxAudioPitch;
         [SerializeField] protected AudioClip[] hitSounds;
         [SerializeField] protected AudioClip[] deathSounds;
         [Space] [SerializeField] protected UnityEvent onHitTarget;
@@ -29,9 +30,15 @@ namespace Characters
             onHitTarget.AddListener(() => PlayRandomClip(hitSounds));
         }
 
+        protected void PlayClip(AudioClip clip)
+        {
+            source.pitch = Random.Range(minMaxAudioPitch.x, minMaxAudioPitch.y);
+            source.PlayOneShot(clip);
+        }
+
         protected void PlayRandomClip(AudioClip[] clips)
         {
-            source.pitch = Random.Range(0.75f, 1.25f);
+            source.pitch = Random.Range(minMaxAudioPitch.x, minMaxAudioPitch.y);
             source.PlayOneShot(GetRandom(clips));
         }
 
@@ -51,7 +58,7 @@ namespace Characters
             }
         }
 
-        protected void Update()
+        public void FlipTextureIfNeeded()
         {
             var euler = transform.rotation.eulerAngles;
 

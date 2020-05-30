@@ -53,6 +53,7 @@ MonoBehaviour:
   maxHealth: 20
   health: 20
   source: {fileID: 1553151689919109611}
+  minMaxAudioPitch: {x: 0.75, y: 1.25}
   hitSounds:
   - {fileID: 8300000, guid: c0cd791fa220a5646a59fba305a1c714, type: 3}
   - {fileID: 8300000, guid: 79d63541d84632b4fa9fd32fda94b84a, type: 3}
@@ -82,9 +83,9 @@ MonoBehaviour:
   minMaxMovementSpeed:
     min: 8
     max: 10
-  damage: 5
+  meleeDamage: 5
   timeBetweenAttacks: 0.75
-  attackDistance: 2
+  meleeDistance: 2
   deadSprite: {fileID: 21300000, guid: 39a4d02887992834ebac0e6d56d307db, type: 3}
   player: {fileID: 0}
 --- !u!50 &9111647515017247984
