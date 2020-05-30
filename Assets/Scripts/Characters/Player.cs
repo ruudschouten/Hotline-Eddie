@@ -10,7 +10,11 @@ namespace Characters
         [SerializeField] private float timeToWaitForStaminaRegen;
         [SerializeField] private UnityEvent onShoot;
         [SerializeField] private UnityEvent onHeal;
+        [SerializeField] private UnityEvent onStaminaUse;
+        [SerializeField] private UnityEvent onStaminaRecovered;
 
+        public float MaxStamina => _maxStamina;
+        
         private float _maxStamina;
         private float _staminaRegenTimer;
         private bool _isStaminaRegenerating;
@@ -23,6 +27,7 @@ namespace Characters
                 stamina = value;
                 _isStaminaRegenerating = false;
                 _staminaRegenTimer = 0;
+                onStaminaUse.Invoke();
             }
         }
         
@@ -46,6 +51,7 @@ namespace Characters
                 if (_isStaminaRegenerating)
                 {
                     stamina += staminaRegen * Time.deltaTime;
+                    onStaminaRecovered.Invoke();
                 }
                 else
                 {
