@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -10,7 +11,7 @@ public class Trigger : MonoBehaviour
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private new BoxCollider2D collider;
 
-    [SerializeField] private UnityEvent playerEnteredEvent;
+    [SerializeField] protected UnityEvent playerEnteredEvent;
 
     public Rigidbody2D Rigidbody => rigidbody;
 
@@ -28,7 +29,12 @@ public class Trigger : MonoBehaviour
         HitObject(other.collider);
     }
 
-    private void HitObject(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        HitObject(other);
+    }
+
+    protected virtual void HitObject(Collider2D other)
     {
         if (_playedAudio)
         {
