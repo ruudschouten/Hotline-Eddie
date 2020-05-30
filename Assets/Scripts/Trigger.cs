@@ -7,9 +7,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class Trigger : MonoBehaviour
 {
-    [SerializeField] private AudioSource triggerSource;
-    [SerializeField] private new Rigidbody2D rigidbody;
-    [SerializeField] private new BoxCollider2D collider;
+    [SerializeField] protected AudioSource triggerSource;
+    [SerializeField] protected new Rigidbody2D rigidbody;
+    [SerializeField] protected new BoxCollider2D collider;
 
     [SerializeField] protected UnityEvent playerEnteredEvent;
 
