@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -44,14 +43,6 @@ public class Trigger : MonoBehaviour
             triggerSource.Play();
             
             playerEnteredEvent.Invoke();
-
-            StartCoroutine(SlowDisable());
         }
-    }
-
-    private IEnumerator SlowDisable()
-    {
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
     }
 }
