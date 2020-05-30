@@ -222,7 +222,7 @@ MonoBehaviour:
   threeQuartersHealthClip: {fileID: 8300000, guid: 7b7201e419eb3244bb3dbaf7962cf9f4,
     type: 3}
   killClip: {fileID: 8300000, guid: e54a9dcdce6a6cd4c8fa32de8e0b79de, type: 3}
-  bulletPrefab: {fileID: 5391602464434476035, guid: 9e4db128a741b1a44b82ac179f49a4a1,
+  bulletPrefab: {fileID: 7393658555382887175, guid: 8217feacceb02d14082d0baf9e92ca77,
     type: 3}
   bulletEmitTransform: {fileID: 6198903495165165774}
   minRangedDistance: 5
