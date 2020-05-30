@@ -63911,6 +63911,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5391602464434476035, guid: 9e4db128a741b1a44b82ac179f49a4a1,
     type: 3}
   movementSpeed: 6
+  dashSpeedMultiplier: 2
   timeBetweenShots: 0.2
 --- !u!114 &1224065102
 MonoBehaviour:
@@ -63953,21 +63954,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c945333a-b6bd-480e-82d4-f4fe5482cc40
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1224065101}
-        m_MethodName: HandleMouseMovement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f668ee4b-fedb-4383-8e3d-b8c64468067b
-    m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1224065101}
@@ -64023,6 +64009,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 89622174-2f26-427e-9bca-0eff4e66c5b5
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1224065101}
+        m_MethodName: HandleDashInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f39e348a-dcd6-4e6f-8bca-af724d60140f
+    m_ActionName: Player/Dash[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -73383,6 +73384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MOONMOON
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343398118447474536, guid: 7b405e848b8939e47ae7bc24d2494948,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3343398118447474539, guid: 7b405e848b8939e47ae7bc24d2494948,
         type: 3}

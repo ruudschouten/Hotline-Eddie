@@ -1,5 +1,4 @@
-﻿using System;
-using Helpers;
+﻿using Helpers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,8 +11,11 @@ namespace Characters
         [SerializeField] private float angleOffset;
         [SerializeField] private Transform bulletEmitTransform;
         [SerializeField] private Bullet bulletPrefab;
-        [SerializeField] private float movementSpeed;
+        [SerializeField] private float baseSpeed;
+        [SerializeField] private float dashSpeedMultiplier;
         [SerializeField] private float timeBetweenShots;
+
+        private float _movementSpeed;
         
         private bool _shouldMove;
         private Vector2 _inputVector;
@@ -24,8 +26,9 @@ namespace Characters
         private bool _canShoot;
         private float _shootTimer;
 
-        private void Update()
+        private void Awake()
         {
+            _movementSpeed = baseSpeed;
         }
 
         private void FixedUpdate()
@@ -94,9 +97,22 @@ namespace Characters
             }
         }
 
+        public void HandleDashInput(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _movementSpeed = baseSpeed * dashSpeedMultiplier;
+            }
+
+            if (context.canceled)
+            {
+                _movementSpeed = baseSpeed;
+            }
+        }
+
         private void Move()
         {
-            var newPosition = player.transform.localPosition + _directionSpeed * (movementSpeed * Time.deltaTime);
+            var newPosition = player.transform.localPosition + _directionSpeed * (_movementSpeed * Time.deltaTime);
             player.transform.localPosition = newPosition;
         }
 
