@@ -7,6 +7,8 @@ public class Wave : MonoBehaviour
 {
     [SerializeField] private EnemyAmountDictionary enemies;
     [SerializeField] private Player player;
+    [SerializeField] private AudioSource musicPlayer;
+    [SerializeField] private AudioClip waveMusic;
     [SerializeField] private Transform[] spawnLocations;
     [SerializeField] private bool hasNextWave;
 
@@ -49,6 +51,10 @@ public class Wave : MonoBehaviour
 
     public void Spawn()
     {
+        musicPlayer.Stop();
+        musicPlayer.clip = waveMusic;
+        musicPlayer.Play();
+        
         foreach (var keyPair in enemies)
         {
             for (var i = 0; i < keyPair.Value; i++)
