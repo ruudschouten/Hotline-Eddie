@@ -5,6 +5,9 @@
 - [Door slam - Gun shot](https://freesound.org/people/coolguy244e/sounds/266915/), CC0 1.0
 - [RemingtonGunshot](https://freesound.org/people/fastson/sounds/50618/), CC BY 3.0
 - [Footsteps in Forest -02](https://freesound.org/people/Gutek/sounds/201884/), CC0 1.0
+- [zombie_yell](https://freesound.org/people/JarAxe/sounds/92026/), CC BY 3.0
+- [Screaming 4](https://freesound.org/people/vtownpunks/sounds/63636/), CC BY 3.0
+- [Mutant Scream](https://freesound.org/people/scorpion67890/sounds/396797/), CC0 1.0
 
 # Music
 
