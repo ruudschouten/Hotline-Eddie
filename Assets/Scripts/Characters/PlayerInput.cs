@@ -26,16 +26,21 @@ namespace Characters
 
         private void Update()
         {
-            LookAtMouse();
         }
 
         private void FixedUpdate()
         {
+            if (player.IsDead)
+            {
+                return;
+            }
             
             if (_shouldMove)
             {
                 Move();
             }
+            
+            LookAtMouse();
 
             if (!_checkForShooting)
             {
