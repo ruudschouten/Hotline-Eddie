@@ -7,8 +7,10 @@ namespace Characters
     {
         [SerializeField] private UnityEvent onShoot;
         [SerializeField] private UnityEvent onDamageReceived;
+        [SerializeField] private UnityEvent onHeal;
 
         public UnityEvent OnDamageReceived => onDamageReceived;
+        public UnityEvent OnHeal => onHeal;
         public UnityEvent OnShoot => onShoot;
 
         public void Awake()
@@ -17,6 +19,16 @@ namespace Characters
             OnShoot.AddListener(() => PlayRandomClip(hitSounds));
         }
 
+        public void Heal(int amount)
+        {
+            health += amount;
+            if (health > maxHealth)
+            {
+                health = maxHealth;
+            }
+            onHeal.Invoke();
+        }
+        
         public override void GetHit(int damage)
         {
             base.GetHit(damage);
