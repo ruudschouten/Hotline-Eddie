@@ -97,6 +97,7 @@ namespace Characters
 
         private void Shoot()
         {
+            player.OnShoot.Invoke();
             var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position, bulletEmitTransform.rotation);
             bullet.ShouldUpdate = true;
             
