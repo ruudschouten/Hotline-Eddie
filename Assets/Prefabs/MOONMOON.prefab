@@ -179,7 +179,7 @@ MonoBehaviour:
   renderer: {fileID: 3343398118447474541}
   collider: {fileID: 3343398118447474540}
   maxHealth: 500
-  health: 50
+  health: 500
   source: {fileID: 5014994339089351284}
   minMaxAudioPitch: {x: 0.75, y: 0.75}
   hitSounds:
