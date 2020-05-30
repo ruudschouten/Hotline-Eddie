@@ -12,11 +12,14 @@ namespace Characters
 
         [SerializeField] protected UnityEvent onDeath;
 
+        public int Health => health;
+        public int MaxHealth => maxHealth;
+        
         public UnityEvent OnDeathEvent => onDeath;
         
         public bool IsDead => health <= 0;
         
-        public void GetHit(int damage)
+        public virtual void GetHit(int damage)
         {
             health -= damage;
 
