@@ -27,16 +27,10 @@ namespace Characters
             _movementSpeed = minMaxMovementSpeed.RandomBetween();
         }
 
-        public bool ShouldMove
+        public void Initialize(Player player)
         {
-            get => shouldMove;
-            set => shouldMove = value;
-        }
-
-        public Player Player
-        {
-            get => player;
-            set => player = value;
+            shouldMove = true;
+            this.player = player;
         }
 
         private void Update()
