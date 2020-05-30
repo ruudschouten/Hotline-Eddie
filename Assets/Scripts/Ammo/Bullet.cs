@@ -1,5 +1,4 @@
-﻿using System;
-using Characters;
+﻿using Characters;
 using Core;
 using NaughtyAttributes;
 using UnityEngine;
@@ -7,8 +6,8 @@ using UnityEngine;
 public class Bullet : MonoRenderer
 {
     [SerializeField] private bool shouldUpdate;
-    [SerializeField] private int damage;
-    [SerializeField] private float speed;
+    [SerializeField] protected int damage;
+    [SerializeField] protected float speed;
     [SerializeField] private float timesToPierce;
 
     [ShowNonSerializedField] private float _enemiesPierced;
@@ -19,7 +18,7 @@ public class Bullet : MonoRenderer
         set => shouldUpdate = value;
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (!shouldUpdate)
         {
@@ -29,7 +28,7 @@ public class Bullet : MonoRenderer
         transform.position += transform.up * (speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Obstacle"))
         {
