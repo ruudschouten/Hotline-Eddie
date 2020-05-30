@@ -12,13 +12,13 @@ public class Bullet : MonoRenderer
     [SerializeField] private float timesToPierce;
 
     [ShowNonSerializedField] private float _enemiesPierced;
-    
+
     public bool ShouldUpdate
     {
         get => shouldUpdate;
         set => shouldUpdate = value;
     }
-    
+
     private void FixedUpdate()
     {
         if (!shouldUpdate)
@@ -33,10 +33,13 @@ public class Bullet : MonoRenderer
     {
         if (other.CompareTag("Obstacle"))
         {
-            
-            Destroy(gameObject);
+            var obstacle = other.GetComponent<Obstacle>();
+            if (obstacle.StopsBullets)
+            {
+                Destroy(gameObject);
+            }
         }
-        
+
         if (other.CompareTag("Enemy"))
         {
             // Damage enemy
@@ -45,8 +48,9 @@ public class Bullet : MonoRenderer
             {
                 return;
             }
+
             enemy.GetHit(damage);
-            
+
             _enemiesPierced++;
 
             if (_enemiesPierced >= timesToPierce)
