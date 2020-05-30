@@ -41,8 +41,6 @@ public class Trigger : MonoBehaviour
             return;
         }
         
-        Debug.Log($"Hit {other.name}");
-        
         if (other.CompareTag("Player"))
         {
             _playedAudio = true;
