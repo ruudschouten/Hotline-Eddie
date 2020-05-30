@@ -9,11 +9,6 @@ public class HealthUI : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite halfHeart;
 
-    private void Awake()
-    {
-        player.OnDamageReceived.AddListener(UpdateHealth);
-    }
-
     public void UpdateHealth()
     { 
         var index = 10;
