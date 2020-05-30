@@ -1,4 +1,5 @@
-﻿using Characters;
+﻿using System.Collections;
+using Characters;
 using NaughtyAttributes;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -23,11 +24,6 @@ public class Wave : MonoBehaviour
     
     [ShowNonSerializedField] private int _defeatedEnemies;
 
-    private void Awake()
-    {
-        Spawn();
-    }
-
     public void EnemyKilled()
     {
         _defeatedEnemies++;
@@ -39,7 +35,7 @@ public class Wave : MonoBehaviour
             if (hasNextWave)
             {
                 nextWave.Player = player;
-                nextWave.Spawn();
+                nextWave.Spawn(true);
                 enabled = false;
             }
             else
@@ -49,11 +45,24 @@ public class Wave : MonoBehaviour
         }
     }
 
-    public void Spawn()
+    public void SpawnDelayed(float seconds)
     {
-        musicPlayer.Stop();
-        musicPlayer.clip = waveMusic;
-        musicPlayer.Play();
+        StartCoroutine(SpawnRoutine(seconds));
+    }
+
+    private IEnumerator SpawnRoutine(float seconds)
+    {
+        StartWaveMusic();
+        yield return new WaitForSeconds(seconds);
+        Spawn(false);
+    }
+    
+    public void Spawn(bool playMusic)
+    {
+        if (playMusic)
+        {
+            StartWaveMusic();
+        }
         
         foreach (var keyPair in enemies)
         {
@@ -64,6 +73,16 @@ public class Wave : MonoBehaviour
                 enemy.OnDeathEvent.AddListener(EnemyKilled);
                 enemy.Player = player;
             }
+        }
+    }
+
+    private void StartWaveMusic()
+    {
+        if (musicPlayer.clip != waveMusic)
+        {
+            musicPlayer.Stop();
+            musicPlayer.clip = waveMusic;
+            musicPlayer.Play();
         }
     }
 
