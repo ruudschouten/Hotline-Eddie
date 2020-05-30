@@ -13,9 +13,12 @@ namespace Characters
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private float baseSpeed;
         [SerializeField] private float dashSpeedMultiplier;
+        [SerializeField] private float minimumStaminaNeededForDashing;
+        [SerializeField] private float staminaUsedForDashing;
         [SerializeField] private float timeBetweenShots;
 
         private float _movementSpeed;
+        private bool _isDashing;
         
         private bool _shouldMove;
         private Vector2 _inputVector;
@@ -31,6 +34,22 @@ namespace Characters
             _movementSpeed = baseSpeed;
         }
 
+        private void Update()
+        {
+            LookAtMouse();
+            
+            if (_isDashing)
+            {
+                player.Stamina -= staminaUsedForDashing * Time.deltaTime;
+            }
+
+            if (player.Stamina <= minimumStaminaNeededForDashing)
+            {
+                _isDashing = false;
+                _movementSpeed = baseSpeed;
+            }
+        }
+
         private void FixedUpdate()
         {
             if (player.IsDead)
@@ -42,8 +61,6 @@ namespace Characters
             {
                 Move();
             }
-            
-            LookAtMouse();
 
             if (!_checkForShooting)
             {
@@ -101,11 +118,13 @@ namespace Characters
         {
             if (context.performed)
             {
+                _isDashing = true;
                 _movementSpeed = baseSpeed * dashSpeedMultiplier;
             }
 
             if (context.canceled)
             {
+                _isDashing = false;
                 _movementSpeed = baseSpeed;
             }
         }

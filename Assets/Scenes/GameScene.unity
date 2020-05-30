@@ -8132,10 +8132,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 952122207}
+  - component: {fileID: 952122208}
   - component: {fileID: 952122211}
   - component: {fileID: 952122210}
   - component: {fileID: 952122209}
-  - component: {fileID: 952122208}
   - component: {fileID: 952122212}
   m_Layer: 0
   m_Name: Player
@@ -8217,6 +8217,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  stamina: 100
+  staminaRegen: 5
+  timeToWaitForStaminaRegen: 2.5
   onShoot:
     m_PersistentCalls:
       m_Calls: []
@@ -63910,8 +63913,10 @@ MonoBehaviour:
   bulletEmitTransform: {fileID: 131452811}
   bulletPrefab: {fileID: 5391602464434476035, guid: 9e4db128a741b1a44b82ac179f49a4a1,
     type: 3}
-  movementSpeed: 6
+  baseSpeed: 6
   dashSpeedMultiplier: 2
+  minimumStaminaNeededForDashing: 20
+  staminaUsedForDashing: 20
   timeBetweenShots: 0.2
 --- !u!114 &1224065102
 MonoBehaviour:
