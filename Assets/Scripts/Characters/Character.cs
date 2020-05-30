@@ -15,12 +15,15 @@ namespace Characters
         [SerializeField] protected AudioClip[] deathSounds;
         [Space] [SerializeField] protected UnityEvent onHitTarget;
         [SerializeField] protected UnityEvent onDeath;
+        [SerializeField] private UnityEvent onGetHit;
 
         public int Health => health;
         public int MaxHealth => maxHealth;
 
         public UnityEvent OnDeathEvent => onDeath;
         public UnityEvent OnHitTargetEvent => onHitTarget;
+
+        public UnityEvent OnGetHit => onGetHit;
 
         public bool IsDead => health <= 0;
 
@@ -55,6 +58,10 @@ namespace Characters
             {
                 Debug.Log($"I have died {transform.name}");
                 onDeath.Invoke();
+            }
+            else
+            {
+                onGetHit.Invoke();
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace Characters
@@ -7,10 +6,8 @@ namespace Characters
     public class Player : Character
     {
         [SerializeField] private UnityEvent onShoot;
-        [SerializeField] private UnityEvent onDamageReceived;
         [SerializeField] private UnityEvent onHeal;
 
-        public UnityEvent OnDamageReceived => onDamageReceived;
         public UnityEvent OnHeal => onHeal;
         public UnityEvent OnShoot => onShoot;
 
@@ -33,13 +30,6 @@ namespace Characters
                 health = maxHealth;
             }
             onHeal.Invoke();
-        }
-        
-        public override void GetHit(int damage)
-        {
-            base.GetHit(damage);
-
-            onDamageReceived.Invoke();
         }
     }
 }
