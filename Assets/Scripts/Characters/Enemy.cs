@@ -22,6 +22,8 @@ namespace Characters
 
         private void Awake()
         {
+            base.Awake();
+
             _movementSpeed = minMaxMovementSpeed.RandomBetween();
         }
 
@@ -44,10 +46,11 @@ namespace Characters
                 return;
             }
 
+            // Call Character.Update so the sprite flips when it would otherwise appear upside down.
             base.Update();
-            
+
             LookAt();
-            
+
             if (!shouldMove)
             {
                 return;
@@ -84,6 +87,7 @@ namespace Characters
 
         private void Attack()
         {
+            onHitTarget.Invoke();
             player.GetHit(damage);
             _canHit = false;
             _canAttack = false;
