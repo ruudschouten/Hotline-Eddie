@@ -660,7 +660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7383370334310565893}
-  - component: {fileID: 1951087311685220477}
+  - component: {fileID: 6736912871217738338}
   - component: {fileID: 7383370334310565889}
   - component: {fileID: 7383370334310565890}
   - component: {fileID: 7383370334310565891}
@@ -688,7 +688,7 @@ Transform:
   m_Father: {fileID: 8181102831294202405}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1951087311685220477
+--- !u!114 &6736912871217738338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7383370334310565894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb440e7628f8434690039b517062506d, type: 3}
+  m_Script: {fileID: 11500000, guid: c7d6b632fff147ab88ddac8e1016b14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 7383370334310565889}
@@ -711,9 +711,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0cd791fa220a5646a59fba305a1c714, type: 3}
   - {fileID: 8300000, guid: 79d63541d84632b4fa9fd32fda94b84a, type: 3}
   - {fileID: 8300000, guid: d8bf3653a98601042acb1323129afd1d, type: 3}
-  - {fileID: 8300000, guid: 63a353d86d2df4a4a9a83e302f6d55b8, type: 3}
-  - {fileID: 8300000, guid: f2a8665d69f327747b6d0d160a383cc5, type: 3}
-  - {fileID: 8300000, guid: 60e2f8f2201249b44bdd408d385eb8c2, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: 39ea21e3a1000e54cb807d95609813ea, type: 3}
   onHitTarget:
@@ -722,7 +719,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951087311685220477}
+      - m_Target: {fileID: 6736912871217738338}
         m_MethodName: OnDeath
         m_Mode: 1
         m_Arguments:
@@ -758,7 +755,7 @@ MonoBehaviour:
   onGetHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1951087311685220477}
+      - m_Target: {fileID: 6736912871217738338}
         m_MethodName: PlayHealthClips
         m_Mode: 1
         m_Arguments:
@@ -770,29 +767,29 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   hasSpawnClip: 0
-  spawnClip: {fileID: 8300000, guid: b398df70faaed1a4188434e5256610fb, type: 3}
+  spawnClip: {fileID: 0}
   shouldMove: 1
   minMaxMovementSpeed:
     min: 7
     max: 7
   meleeDamage: 50
-  timeBetweenAttacks: 1.5
+  timeBetweenAttacks: 2
   meleeDistance: 2
-  deadSprite: {fileID: 21300000, guid: da1d17de846922f4ea9c5bf7ce6694ab, type: 3}
+  deadSprite: {fileID: 0}
   player: {fileID: 0}
-  halfHealthClip: {fileID: 8300000, guid: 7b7201e419eb3244bb3dbaf7962cf9f4, type: 3}
-  threeQuartersHealthClip: {fileID: 8300000, guid: 4472c01ee22522346a7bd8325f0ec135,
+  halfHealthClip: {fileID: 8300000, guid: 4472c01ee22522346a7bd8325f0ec135, type: 3}
+  threeQuartersHealthClip: {fileID: 8300000, guid: 7b7201e419eb3244bb3dbaf7962cf9f4,
     type: 3}
   killClip: {fileID: 8300000, guid: e54a9dcdce6a6cd4c8fa32de8e0b79de, type: 3}
   bulletPrefab: {fileID: 7393658555382887175, guid: 8217feacceb02d14082d0baf9e92ca77,
     type: 3}
   bulletEmitTransform: {fileID: 2168429405029216160}
   bulletPlacementRandomization: 2.5
-  minRangedDistance: 7.5
+  minRangedDistance: 5
   maxRangedDistance: 12.5
-  bulletsToFireAtOnce: 15
-  secondsBetweenShots: 0.025
-  rangedCooldown: 4
+  bulletsToFireAtOnce: 25
+  secondsBetweenShots: 0.05
+  rangedCooldown: 5
   halfASecondBeforeShootEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1137,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2683568690404973ac4051f98113f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 1951087311685220477}
+  boss: {fileID: 0}
   legContainer: {fileID: 8181102831440133848}
   spawnDelay: 2.5
 --- !u!1 &8181102831321167874
@@ -1280,7 +1277,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102831321167878}
   renderer: {fileID: 8181102831321167877}
   collider: {fileID: 8181102831321167879}
-  character: {fileID: 1951087311685220477}
+  character: {fileID: 0}
   movementSpeed: 7
   partToFollow: {fileID: 8181102832630490597}
   minimumDistance: 0.6
@@ -1622,7 +1619,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102831672167786}
   renderer: {fileID: 8181102831672167785}
   collider: {fileID: 8181102831672167787}
-  character: {fileID: 1951087311685220477}
+  character: {fileID: 0}
   movementSpeed: 7
   partToFollow: {fileID: 8181102831321167875}
   minimumDistance: 0.25
@@ -2529,7 +2526,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832385728275}
   renderer: {fileID: 8181102832385728274}
   collider: {fileID: 8181102832385728276}
-  character: {fileID: 1951087311685220477}
+  character: {fileID: 0}
   movementSpeed: 7
   partToFollow: {fileID: 7383370334310565893}
   minimumDistance: 0.75
@@ -2912,7 +2909,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832585151754}
   renderer: {fileID: 8181102832585151753}
   collider: {fileID: 8181102832585151755}
-  character: {fileID: 1951087311685220477}
+  character: {fileID: 0}
   movementSpeed: 7
   partToFollow: {fileID: 8181102832647101469}
   minimumDistance: 0.2
@@ -3137,7 +3134,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832630490584}
   renderer: {fileID: 8181102832630490599}
   collider: {fileID: 8181102832630490585}
-  character: {fileID: 1951087311685220477}
+  character: {fileID: 0}
   movementSpeed: 7
   partToFollow: {fileID: 8181102832385728272}
   minimumDistance: 0.7
@@ -3281,7 +3278,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832647101456}
   renderer: {fileID: 8181102832647101471}
   collider: {fileID: 8181102832647101457}
-  character: {fileID: 1951087311685220477}
+  character: {fileID: 0}
   movementSpeed: 7
   partToFollow: {fileID: 8181102831672167799}
   minimumDistance: 0.25
