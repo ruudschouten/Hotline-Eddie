@@ -9344,7 +9344,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 818007281}
   enemies:
     m_keys:
-    - {fileID: 5981490032248919827, guid: 7b405e848b8939e47ae7bc24d2494948, type: 3}
+    - {fileID: 8801808607932686052, guid: 7b405e848b8939e47ae7bc24d2494948, type: 3}
     m_values: 01000000
   enemyCount: 1
   consumables:

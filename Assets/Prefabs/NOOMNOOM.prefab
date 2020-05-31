@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2683568690404973ac4051f98113f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 0}
+  boss: {fileID: 6736912871217738338}
   legContainer: {fileID: 8181102831440133848}
   spawnDelay: 2.5
 --- !u!1 &8181102831321167874
