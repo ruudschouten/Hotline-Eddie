@@ -10,6 +10,8 @@ namespace Waves
     public class Wave : MonoBehaviour
     {
         [SerializeField] private bool overrideSpawn;
+        [SerializeField] [ShowIf("overrideSpawn")] private bool isBossWave;
+        [SerializeField] [ShowIf("isBossWave")] private FinalBossHelper bossHelper;
 
         [SerializeField] [ShowIf("overrideSpawn")]
         private Transform spawnPoint;
@@ -132,6 +134,11 @@ namespace Waves
                 for (var i = 0; i < pair.Value; i++)
                 {
                     var enemy = Instantiate(pair.Key, GetRandomPosition(), Quaternion.identity);
+                    
+                    if (isBossWave)
+                    {
+                        bossHelper.FirstStage = (Boss) enemy;
+                    }
                     enemy.transform.SetParent(transform, true);
                     enemy.Initialize(_player);
                     enemy.OnDeathEvent.AddListener(EnemyKilled);
