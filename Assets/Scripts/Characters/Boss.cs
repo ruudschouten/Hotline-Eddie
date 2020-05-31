@@ -33,7 +33,7 @@ namespace Characters
         private bool _playedThreeQuartersClip;
         private bool _playedKillClip;
 
-        private bool _shouldInvokeRangeTell;
+        protected bool ShouldInvokeRangeTell;
 
         public void PlayHealthClips()
         {
@@ -99,12 +99,12 @@ namespace Characters
             if (IsRangeRecharging)
             {
                 IsRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
-                if (_shouldInvokeRangeTell)
+                if (ShouldInvokeRangeTell)
                 {
                     if (_rangeCooldownTimer <= 0.5f)
                     {
                         halfASecondBeforeShootEvent.Invoke();
-                        _shouldInvokeRangeTell = false;
+                        ShouldInvokeRangeTell = false;
                     }
                 }
             }
@@ -115,45 +115,55 @@ namespace Characters
             }
         }
 
-        protected virtual void DetermineAction() 
+        protected virtual void DetermineAction()
         {
-        
+            // Get the distance between the player and the boss.
+            Distance = Vector3.Distance(transform.position, player.transform.position);
+            
+            // Check if player is outside of melee distance.
+            if (Distance >= meleeDistance)
+            {
+                // Check if the ranged attack is ready.
+                if (!IsRangeRecharging)
+                {
+                    // Check if the player is between the min and max range distances
+                    if (Distance >= minRangedDistance && Distance <= maxRangedDistance)
+                    {
+                        Shoot();
+
+                        IsRangeRecharging = true;
+                    }
+                    else
+                    {
+                        Move();
+                    }
+                }
+                else
+                {
+                    // If the player is still recharging, move towards the player, hoping to get into melee range.
+                    Move();
+                }
+            }
+            else
+            {
+                if (!IsMeleeRecharging)
+                {
+                    MeleeAttack();
+                    IsMeleeRecharging = true;
+                }
+            }
         }
 
-        public void MeleeAttack()
+        public virtual void MeleeAttack()
         {
             _meleeCooldownTimer = 0;
             onHitTarget.Invoke();
             player.GetHit(meleeDamage);
         }
 
-        public void Shoot()
+        public virtual void Shoot()
         {
             _rangeCooldownTimer = 0;
-            StartCoroutine(ShootRoutine());
-        }
-
-        private IEnumerator ShootRoutine()
-        {
-            for (var i = 0; i < bulletsToFireAtOnce; i++)
-            {
-                if (i % 10 == 0)
-                {
-                    onShootEvent.Invoke();
-                }
-
-                var randomPlacement = new Vector3(
-                    Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization),
-                    Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization));
-                var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position + randomPlacement,
-                    bulletEmitTransform.rotation);
-                bullet.ShouldUpdate = true;
-
-                yield return new WaitForSecondsRealtime(secondsBetweenShots);
-            }
-
-            _shouldInvokeRangeTell = true;
-            IsRangeRecharging = true;
         }
     }
 }

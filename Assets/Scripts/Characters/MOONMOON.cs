@@ -1,45 +1,37 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Characters
 {
     public class MOONMOON : Boss
     {
-        protected override void DetermineAction()
+        public override void Shoot()
         {
-            // Get the distance between the player and the boss.
-            Distance = Vector3.Distance(transform.position, player.transform.position);
-            // Check if player is outside of melee distance.
-            if (Distance >= meleeDistance)
-            {
-                // Check if the ranged attack is ready.
-                if (!IsRangeRecharging)
-                {
-                    // Check if the player is between the min and max range distances
-                    if (Distance >= minRangedDistance && Distance <= maxRangedDistance)
-                    {
-                        Shoot();
+            base.Shoot();
+            StartCoroutine(ShootRoutine());
+        }
 
-                        IsRangeRecharging = true;
-                    }
-                    else
-                    {
-                        Move();
-                    }
-                }
-                else
-                {
-                    // If the player is still recharging, move towards the player, hoping to get into melee range.
-                    Move();
-                }
-            }
-            else
+        private IEnumerator ShootRoutine()
+        {
+            for (var i = 0; i < bulletsToFireAtOnce; i++)
             {
-                if (!IsMeleeRecharging)
+                if (i % 10 == 0)
                 {
-                    MeleeAttack();
-                    IsMeleeRecharging = true;
+                    onShootEvent.Invoke();
                 }
+
+                var randomPlacement = new Vector3(
+                    Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization),
+                    Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization));
+                var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position + randomPlacement,
+                    bulletEmitTransform.rotation);
+                bullet.ShouldUpdate = true;
+
+                yield return new WaitForSecondsRealtime(secondsBetweenShots);
             }
+
+            ShouldInvokeRangeTell = true;
+            IsRangeRecharging = true;
         }
     }
 }
