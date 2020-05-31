@@ -21,6 +21,7 @@ namespace Waves
         [SerializeField] private ConsumableAmountDictionary consumables;
         [SerializeField] private AudioClip waveMusic;
         [SerializeField] private bool hasNextWave;
+        [SerializeField] private UnityEvent onWaveStartEvent;
         [SerializeField] private UnityEvent onAllEnemiesDefeated;
 
         [SerializeField] [ShowIf("hasNextWave")]
@@ -109,6 +110,7 @@ namespace Waves
         public void Spawn(bool playMusic)
         {
             _started = true;
+            onWaveStartEvent.Invoke();
 
             if (playMusic)
             {
