@@ -56,7 +56,6 @@ namespace Characters
 
             if (IsDead)
             {
-                Debug.Log($"I have died {transform.name}");
                 onDeath.Invoke();
             }
             else
