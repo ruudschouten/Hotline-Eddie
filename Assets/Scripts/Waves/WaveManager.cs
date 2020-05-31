@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using Characters;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Waves
 {
     public class WaveManager : MonoBehaviour
     {
-        [SerializeField] private Wave[] waves;
+        [SerializeField][ReorderableList] private Wave[] waves;
         [SerializeField] private Transform[] enemySpawnLocations;
         [Space]
         [SerializeField] private Player player;
