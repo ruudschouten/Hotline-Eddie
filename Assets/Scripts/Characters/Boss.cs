@@ -6,27 +6,27 @@ namespace Characters
 {
     public class Boss : Enemy
     {
-        [SerializeField] private AudioClip halfHealthClip;
-        [SerializeField] private AudioClip threeQuartersHealthClip;
-        [SerializeField] private AudioClip killClip;
-        [Space] [SerializeField] private Bullet bulletPrefab;
-        [SerializeField] private Transform bulletEmitTransform;
-        [SerializeField] private float bulletPlacementRandomization;
-        [SerializeField] private float minRangedDistance;
-        [SerializeField] private float maxRangedDistance;
-        [SerializeField] private int bulletsToFireAtOnce;
-        [SerializeField] private float secondsBetweenShots;
-        [SerializeField] private float rangedCooldown;
-        [SerializeField] private UnityEvent halfASecondBeforeShootEvent;
-        [SerializeField] private UnityEvent onShootEvent;
+        [SerializeField] protected AudioClip halfHealthClip;
+        [SerializeField] protected AudioClip threeQuartersHealthClip;
+        [SerializeField] protected AudioClip killClip;
+        [Space] [SerializeField] protected Bullet bulletPrefab;
+        [SerializeField] protected Transform bulletEmitTransform;
+        [SerializeField] protected float bulletPlacementRandomization;
+        [SerializeField] protected float minRangedDistance;
+        [SerializeField] protected float maxRangedDistance;
+        [SerializeField] protected int bulletsToFireAtOnce;
+        [SerializeField] protected float secondsBetweenShots;
+        [SerializeField] protected float rangedCooldown;
+        [SerializeField] protected UnityEvent halfASecondBeforeShootEvent;
+        [SerializeField] protected UnityEvent onShootEvent;
 
-        private float _distance;
+        protected float Distance;
 
-        private bool _isMeleeRecharging;
+        protected bool IsMeleeRecharging;
         private float _meleeCooldownTimer;
 
         // We set this to true from the start, so the boss won't shoot as soon as the player sees him.
-        private bool _isRangeRecharging = true;
+        protected bool IsRangeRecharging = true;
         private float _rangeCooldownTimer;
 
         private bool _playedHalfClip;
@@ -96,9 +96,9 @@ namespace Characters
 
         private void UpdateTimers()
         {
-            if (_isRangeRecharging)
+            if (IsRangeRecharging)
             {
-                _isRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
+                IsRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
                 if (_shouldInvokeRangeTell)
                 {
                     if (_rangeCooldownTimer <= 0.5f)
@@ -109,48 +109,15 @@ namespace Characters
                 }
             }
 
-            if (_isMeleeRecharging)
+            if (IsMeleeRecharging)
             {
-                _isMeleeRecharging = !AdvanceAndCheckTimer(ref _meleeCooldownTimer, timeBetweenAttacks);
+                IsMeleeRecharging = !AdvanceAndCheckTimer(ref _meleeCooldownTimer, timeBetweenAttacks);
             }
         }
 
-        private void DetermineAction()
+        protected virtual void DetermineAction() 
         {
-            // Get the distance between the player and the boss.
-            _distance = Vector3.Distance(transform.position, player.transform.position);
-            // Check if player is outside of melee distance.
-            if (_distance >= meleeDistance)
-            {
-                // Check if the ranged attack is ready.
-                if (!_isRangeRecharging)
-                {
-                    // Check if the player is between the min and max range distances
-                    if (_distance >= minRangedDistance && _distance <= maxRangedDistance)
-                    {
-                        Shoot();
-
-                        _isRangeRecharging = true;
-                    }
-                    else
-                    {
-                        Move();
-                    }
-                }
-                else
-                {
-                    // If the player is still recharging, move towards the player, hoping to get into melee range.
-                    Move();
-                }
-            }
-            else
-            {
-                if (!_isMeleeRecharging)
-                {
-                    MeleeAttack();
-                    _isMeleeRecharging = true;
-                }
-            }
+        
         }
 
         public void MeleeAttack()
@@ -186,7 +153,7 @@ namespace Characters
             }
 
             _shouldInvokeRangeTell = true;
-            _isRangeRecharging = true;
+            IsRangeRecharging = true;
         }
     }
 }

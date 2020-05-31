@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3343398118447474539}
-  - component: {fileID: 5981490032248919827}
+  - component: {fileID: 8801808607932686052}
   - component: {fileID: 3343398118447474543}
   - component: {fileID: 3343398118447474540}
   - component: {fileID: 3343398118447474541}
@@ -163,7 +163,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5981490032248919827
+--- !u!114 &8801808607932686052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3343398118447474536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb440e7628f8434690039b517062506d, type: 3}
+  m_Script: {fileID: 11500000, guid: bebd641a86b944b6a9606c4218ef8f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 3343398118447474543}
@@ -194,7 +194,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5981490032248919827}
+      - m_Target: {fileID: 8801808607932686052}
         m_MethodName: OnDeath
         m_Mode: 1
         m_Arguments:
@@ -208,7 +208,7 @@ MonoBehaviour:
   onGetHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5981490032248919827}
+      - m_Target: {fileID: 8801808607932686052}
         m_MethodName: PlayHealthClips
         m_Mode: 1
         m_Arguments:
@@ -250,7 +250,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 63a353d86d2df4a4a9a83e302f6d55b8,
+          m_ObjectArgument: {fileID: 8300000, guid: f2a8665d69f327747b6d0d160a383cc5,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
