@@ -38,6 +38,11 @@ namespace Characters
                 return;
             }
 
+            if (player.IsDead)
+            {
+                return;
+            }
+            
             // Call Character.Update so the sprite flips when it would otherwise appear upside down.
             FlipTextureIfNeeded();
 
