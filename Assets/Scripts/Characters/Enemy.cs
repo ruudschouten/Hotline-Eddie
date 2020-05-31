@@ -21,6 +21,8 @@ namespace Characters
         private bool _canAttack;
         private float _attackTimer;
 
+        public Player Player => player;
+
         protected void Awake()
         {
             base.Awake();
@@ -106,7 +108,7 @@ namespace Characters
 
         protected void LookAt()
         {
-            var angle = LookAtHelper.GetAngleAtTarget(player.transform.position, transform.localPosition) - 180;
+            var angle = LookAtHelper.GetAngleAtTarget(player.transform.position, transform.position) - 180;
             transform.localRotation = Quaternion.Euler(0, 0, angle);
         }
 
