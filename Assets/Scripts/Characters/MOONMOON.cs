@@ -14,7 +14,7 @@ namespace Characters
         [SerializeField] protected float minRangedDistance;
         [SerializeField] protected float maxRangedDistance;
         [SerializeField] protected float rangedCooldown;
-        [SerializeField] protected UnityEvent halfASecondBeforeShootEvent;
+        [SerializeField] protected UnityEvent secondBeforeShootEvent;
         [SerializeField] protected UnityEvent onShootEvent;
         
         // We set this to true from the start, so the boss won't shoot as soon as the player sees him.
@@ -36,9 +36,9 @@ namespace Characters
                 _isRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
                 if (ShouldInvokeRangeTell)
                 {
-                    if (_rangeCooldownTimer <= 0.5f)
+                    if (_rangeCooldownTimer <= 1f)
                     {
-                        halfASecondBeforeShootEvent.Invoke();
+                        secondBeforeShootEvent.Invoke();
                         ShouldInvokeRangeTell = false;
                     }
                 }
