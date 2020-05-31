@@ -70,11 +70,6 @@ namespace Characters
 
             LookAt();
 
-            if (!shouldMove)
-            {
-                return;
-            }
-
             UpdateTimers();
 
             DetermineAction();
@@ -91,7 +86,15 @@ namespace Characters
         protected virtual void DetermineAction()
         {
             CalculateDistance();
-            CheckForMelee();
+            if (ShouldMelee())
+            {
+                return;
+            }
+            if (!shouldMove)
+            {
+                return;
+            }
+            Move();
         }
 
         protected virtual void CalculateDistance()
@@ -100,18 +103,19 @@ namespace Characters
             Distance = Vector3.Distance(transform.position, player.transform.position);
         }
 
-        protected virtual void CheckForMelee()
+        protected virtual bool ShouldMelee()
         {
             if (!(Distance <= meleeDistance))
             {
-                return;
+                return false;
             }
             if (IsMeleeRecharging)
             {
-                return;
+                return false;
             }
             MeleeAttack();
             IsMeleeRecharging = true;
+            return true;
         }
 
         public virtual void MeleeAttack()
