@@ -14,6 +14,8 @@
 - [Mutant Scream](https://freesound.org/people/scorpion67890/sounds/396797/), CC0 1.0
 - [Horror Sliding Transition](https://freesound.org/people/qubodup/sounds/169727/), CC0 1.0
 - [Magic Smite](https://freesound.org/people/spookymodem/sounds/249819/), CC0 1.0
+- [Squishes](https://freesound.org/people/Eneasz/sounds/216882/), CC0 1.0
+- [Tomato squish;wet](https://freesound.org/people/HonorHunter/sounds/271666/), CC0 1.0
 
 ## Licences
 
