@@ -110,6 +110,7 @@ namespace Characters
 
         public void OnDeath()
         {
+            renderer.sortingOrder -= 1;
             renderer.sprite = deadSprite;
             collider.enabled = false;
         }
