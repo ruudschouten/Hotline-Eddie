@@ -8155,20 +8155,21 @@ MonoBehaviour:
     m_keys:
     - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
     - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 0400000002000000
-  enemyCount: 6
+    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
+    m_values: 040000000200000002000000
+  enemyCount: 8
   consumables:
     m_keys:
     - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
     m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 3bf3b879be8848d47865d01fb8bfa9cc, type: 3}
+  waveMusic: {fileID: 8300000, guid: a67829e70f6b1934597b0e995dfa9a25, type: 3}
   hasNextWave: 1
   onAllEnemiesDefeated:
     m_PersistentCalls:
       m_Calls: []
   nextWave: {fileID: 981060443}
   startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 10
+  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &818007280
 GameObject:
   m_ObjectHideFlags: 0
@@ -9481,8 +9482,9 @@ MonoBehaviour:
   enemies:
     m_keys:
     - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    m_values: 02000000
-  enemyCount: 2
+    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
+    m_values: 0200000001000000
+  enemyCount: 3
   consumables:
     m_keys:
     - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
@@ -9493,8 +9495,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   nextWave: {fileID: 544916560}
-  startNextWaveAfterCooldown: 0
-  secondsToWaitBeforeStartingNextWave: 5
+  startNextWaveAfterCooldown: 1
+  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &998783662
 GameObject:
   m_ObjectHideFlags: 0
@@ -65297,8 +65299,9 @@ MonoBehaviour:
     - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
     - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
     - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 040000000400000001000000
-  enemyCount: 9
+    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
+    m_values: 04000000040000000100000001000000
+  enemyCount: 10
   consumables:
     m_keys:
     - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
@@ -65703,7 +65706,7 @@ MonoBehaviour:
   enemies:
     m_keys:
     - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 6476739267436825003, guid: 0f3a4a98a296cef47870af016faca009, type: 3}
+    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
     m_values: 0a00000001000000
   enemyCount: 11
   consumables:
@@ -74732,13 +74735,14 @@ MonoBehaviour:
   enemies:
     m_keys:
     - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 0400000003000000
+    - {fileID: 6476739267436825003, guid: 0f3a4a98a296cef47870af016faca009, type: 3}
+    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
+    m_values: 040000000100000002000000
   enemyCount: 7
   consumables:
     m_keys:
     - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
+    m_values: 02000000
   waveMusic: {fileID: 8300000, guid: a67829e70f6b1934597b0e995dfa9a25, type: 3}
   hasNextWave: 1
   onAllEnemiesDefeated:
