@@ -2,6 +2,7 @@
 using Characters;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Waves
@@ -12,11 +13,13 @@ namespace Waves
         [SerializeField] private ConsumableAmountDictionary consumables;
         [SerializeField] private AudioClip waveMusic;
         [SerializeField] private bool hasNextWave;
+        [SerializeField] private UnityEvent onAllEnemiesDefeated;
 
         [SerializeField] [ShowIf("hasNextWave")]
         private Wave nextWave;
 
-        [SerializeField] [ShowIf("hasNextWave")]
+        [SerializeField] [ShowIf("hasNextWave")] private bool startNextWaveAfterCooldown;
+        [SerializeField] [ShowIf("startNextWaveAfterCooldown")]
         private float secondsToWaitBeforeStartingNextWave;
 
         public bool Started => _started;
@@ -54,6 +57,8 @@ namespace Waves
 
             if (_defeatedEnemies >= enemies.Keys.Count)
             {
+                onAllEnemiesDefeated.Invoke();
+                
                 if (hasNextWave)
                 {
                     if (nextWave.Started)
@@ -63,10 +68,6 @@ namespace Waves
 
                     // If all enemies are killed, and a next wave is available, start the next wave.
                     _manager.StartNextWave(true);
-                }
-                else
-                {
-                    // TODO: Player won the game, show screen.
                 }
             }
         }
@@ -101,7 +102,10 @@ namespace Waves
 
             if (hasNextWave)
             {
-                StartNextWaveAfter(secondsToWaitBeforeStartingNextWave);
+                if (startNextWaveAfterCooldown)
+                {
+                    StartNextWaveAfter(secondsToWaitBeforeStartingNextWave);   
+                }
             }
         }
 

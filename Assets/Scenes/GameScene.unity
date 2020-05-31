@@ -9011,7 +9011,11 @@ MonoBehaviour:
     m_values: 01000000
   waveMusic: {fileID: 8300000, guid: a67829e70f6b1934597b0e995dfa9a25, type: 3}
   hasNextWave: 1
+  onAllEnemiesDefeated:
+    m_PersistentCalls:
+      m_Calls: []
   nextWave: {fileID: 1823464601}
+  startNextWaveAfterCooldown: 0
   secondsToWaitBeforeStartingNextWave: 8
 --- !u!1 &969984204
 GameObject:
@@ -9113,6 +9117,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &998783662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998783663}
+  - component: {fileID: 998783664}
+  m_Layer: 0
+  m_Name: Final Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998783663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998783662}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2090674488}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998783664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998783662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+    m_keys:
+    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
+    - {fileID: 5981490032248919827, guid: 7b405e848b8939e47ae7bc24d2494948, type: 3}
+    m_values: 0600000001000000
+  consumables:
+    m_keys:
+    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
+    m_values: 01000000
+  waveMusic: {fileID: 8300000, guid: 3bf3b879be8848d47865d01fb8bfa9cc, type: 3}
+  hasNextWave: 0
+  onAllEnemiesDefeated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2132007418}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  nextWave: {fileID: 0}
+  startNextWaveAfterCooldown: 0
+  secondsToWaitBeforeStartingNextWave: 5
 --- !u!1 &1010780828
 GameObject:
   m_ObjectHideFlags: 0
@@ -68005,8 +68080,12 @@ MonoBehaviour:
     - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
     m_values: 01000000
   waveMusic: {fileID: 8300000, guid: a67829e70f6b1934597b0e995dfa9a25, type: 3}
-  hasNextWave: 0
-  nextWave: {fileID: 0}
+  hasNextWave: 1
+  onAllEnemiesDefeated:
+    m_PersistentCalls:
+      m_Calls: []
+  nextWave: {fileID: 998783664}
+  startNextWaveAfterCooldown: 0
   secondsToWaitBeforeStartingNextWave: 5
 --- !u!1 &1830914481
 GameObject:
@@ -74860,6 +74939,7 @@ Transform:
   m_Children:
   - {fileID: 967264666}
   - {fileID: 1823464600}
+  - {fileID: 998783663}
   m_Father: {fileID: 325601565}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
