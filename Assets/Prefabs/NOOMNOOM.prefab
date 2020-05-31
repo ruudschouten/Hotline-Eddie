@@ -752,6 +752,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8181102831894020006}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onGetHit:
     m_PersistentCalls:
       m_Calls:
@@ -781,45 +792,9 @@ MonoBehaviour:
   threeQuartersHealthClip: {fileID: 8300000, guid: 7b7201e419eb3244bb3dbaf7962cf9f4,
     type: 3}
   killClip: {fileID: 8300000, guid: e54a9dcdce6a6cd4c8fa32de8e0b79de, type: 3}
-  bulletPrefab: {fileID: 7393658555382887175, guid: 8217feacceb02d14082d0baf9e92ca77,
-    type: 3}
-  bulletEmitTransform: {fileID: 2168429405029216160}
-  bulletPlacementRandomization: 2.5
-  minRangedDistance: 5
-  maxRangedDistance: 12.5
-  bulletsToFireAtOnce: 25
-  secondsBetweenShots: 0.05
-  rangedCooldown: 5
-  halfASecondBeforeShootEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 975579261056085274}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0fac6ace8f83f4544a48a9181cc42450,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onShootEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 975579261056085274}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d62f81f4cfbda414cb46232fcb27e217,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  pullPower: 4.5
+  pullDuration: 2
+  pullCooldown: 3
 --- !u!50 &7383370334310565889
 Rigidbody2D:
   serializedVersion: 4
@@ -1277,7 +1252,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102831321167878}
   renderer: {fileID: 8181102831321167877}
   collider: {fileID: 8181102831321167879}
-  character: {fileID: 0}
+  character: {fileID: 6736912871217738338}
   movementSpeed: 7
   partToFollow: {fileID: 8181102832630490597}
   minimumDistance: 0.6
@@ -1619,7 +1594,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102831672167786}
   renderer: {fileID: 8181102831672167785}
   collider: {fileID: 8181102831672167787}
-  character: {fileID: 0}
+  character: {fileID: 6736912871217738338}
   movementSpeed: 7
   partToFollow: {fileID: 8181102831321167875}
   minimumDistance: 0.25
@@ -2526,7 +2501,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832385728275}
   renderer: {fileID: 8181102832385728274}
   collider: {fileID: 8181102832385728276}
-  character: {fileID: 0}
+  character: {fileID: 6736912871217738338}
   movementSpeed: 7
   partToFollow: {fileID: 7383370334310565893}
   minimumDistance: 0.75
@@ -2909,7 +2884,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832585151754}
   renderer: {fileID: 8181102832585151753}
   collider: {fileID: 8181102832585151755}
-  character: {fileID: 0}
+  character: {fileID: 6736912871217738338}
   movementSpeed: 7
   partToFollow: {fileID: 8181102832647101469}
   minimumDistance: 0.2
@@ -3134,7 +3109,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832630490584}
   renderer: {fileID: 8181102832630490599}
   collider: {fileID: 8181102832630490585}
-  character: {fileID: 0}
+  character: {fileID: 6736912871217738338}
   movementSpeed: 7
   partToFollow: {fileID: 8181102832385728272}
   minimumDistance: 0.7
@@ -3278,7 +3253,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8181102832647101456}
   renderer: {fileID: 8181102832647101471}
   collider: {fileID: 8181102832647101457}
-  character: {fileID: 0}
+  character: {fileID: 6736912871217738338}
   movementSpeed: 7
   partToFollow: {fileID: 8181102831672167799}
   minimumDistance: 0.25
