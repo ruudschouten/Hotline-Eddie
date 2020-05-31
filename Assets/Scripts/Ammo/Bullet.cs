@@ -39,6 +39,23 @@ public class Bullet : MonoRenderer
             }
         }
 
+        if (other.CompareTag("Bodypart"))
+        {
+            var part = other.GetComponent<BodyPart>();
+            if (part.Character.IsDead)
+            {
+                return;
+            }
+            part.Character.GetHit(damage);
+            
+            _enemiesPierced++;
+
+            if (_enemiesPierced >= timesToPierce)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         if (other.CompareTag("Enemy"))
         {
             // Damage enemy
