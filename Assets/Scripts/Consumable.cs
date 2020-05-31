@@ -22,6 +22,12 @@ public class Consumable : Trigger
             return;
         }
 
+        // Only consume if the players' health is actually low
+        if (player.Health == player.MaxHealth)
+        {
+            return;
+        }
+
         player.Heal(healAmount);
         _isConsumed = true;
         renderer.enabled = false;
