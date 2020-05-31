@@ -229,7 +229,7 @@ MonoBehaviour:
   maxRangedDistance: 15
   bulletsToFireAtOnce: 20
   secondsBetweenShots: 0.05
-  rangedCooldown: 12.5
+  rangedCooldown: 5
   onShootEvent:
     m_PersistentCalls:
       m_Calls:
