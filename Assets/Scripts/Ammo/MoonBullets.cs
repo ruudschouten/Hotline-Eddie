@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Ammo
 {
-    public class MoonBullets : Bullet
+    public class MoonBullets : EnemyBullet
     {
         [SerializeField] private float slowerBulletTime;
         [SerializeField] private float slowSpeed;
@@ -35,16 +35,6 @@ namespace Ammo
             else
             {
                 transform.position += transform.up * (speed * Time.deltaTime);
-            }
-        }
-        
-        protected override void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                var player = other.GetComponent<Player>();
-                player.GetHit(damage);
-                Destroy(gameObject);
             }
         }
     }
