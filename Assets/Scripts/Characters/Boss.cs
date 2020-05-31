@@ -6,7 +6,6 @@ namespace Characters
 {
     public class Boss : Enemy
     {
-        [SerializeField] private AudioClip spawnClip;
         [SerializeField] private AudioClip halfHealthClip;
         [SerializeField] private AudioClip threeQuartersHealthClip;
         [SerializeField] private AudioClip killClip;
@@ -43,6 +42,7 @@ namespace Characters
                     _playedThreeQuartersClip = true;
                 }
             }
+
             if (!_playedHalfClip)
             {
                 if (Between(1, 50, (int) percentage))
@@ -56,12 +56,6 @@ namespace Characters
         private bool Between(int lowest, int highest, int value)
         {
             return value <= highest && value >= lowest;
-        }
-
-        public void Awake()
-        {
-            base.Awake();
-            PlayClip(spawnClip);
         }
 
         private void OnDrawGizmos()
@@ -80,7 +74,7 @@ namespace Characters
             {
                 return;
             }
-            
+
             if (player.IsDead)
             {
                 if (!_playedKillClip)

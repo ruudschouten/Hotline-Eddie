@@ -1,10 +1,13 @@
 ﻿using Helpers;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Characters
 {
     public class Enemy : Character
     {
+        [SerializeField] private bool hasSpawnClip;
+        [SerializeField] [ShowIf("hasSpawnClip")] private AudioClip spawnClip;
         [SerializeField] protected bool shouldMove;
         [SerializeField] protected MinMaxFloat minMaxMovementSpeed;
         [SerializeField] protected int meleeDamage;
@@ -13,7 +16,7 @@ namespace Characters
         [SerializeField] protected Sprite deadSprite;
         [SerializeField] protected Player player;
 
-        private float _movementSpeed;
+        protected float MovementSpeed;
         private bool _canHit;
         private bool _canAttack;
         private float _attackTimer;
@@ -22,7 +25,12 @@ namespace Characters
         {
             base.Awake();
 
-            _movementSpeed = minMaxMovementSpeed.RandomBetween();
+            MovementSpeed = minMaxMovementSpeed.RandomBetween();
+            
+            if (hasSpawnClip)
+            {
+                source.PlayOneShot(spawnClip);
+            }
         }
 
         public void Initialize(Player player)
@@ -84,7 +92,7 @@ namespace Characters
 
         protected void Move()
         {
-            transform.position -= transform.right * (_movementSpeed * Time.deltaTime);
+            transform.position -= transform.right * (MovementSpeed * Time.deltaTime);
         }
 
         private void Attack()

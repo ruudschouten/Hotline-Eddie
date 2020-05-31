@@ -5,7 +5,6 @@ namespace Characters
 {
     public class RangedEnemy : Enemy
     {
-        [SerializeField] private AudioClip spawnClip;
         [Space] [SerializeField] private AudioSource bulletSource;
         [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private Transform bulletEmitTransform;
@@ -17,16 +16,6 @@ namespace Characters
         private bool _inRange;
         private bool _canShoot;
         private float _shootTimer;
-
-        private float _movementSpeed;
-
-        protected void Awake()
-        {
-            base.Awake();
-
-            _movementSpeed = minMaxMovementSpeed.RandomBetween();
-            source.PlayOneShot(spawnClip);
-        }
 
         protected virtual void Update()
         {
@@ -81,7 +70,7 @@ namespace Characters
 
         private void MoveAway()
         {
-            transform.position += transform.right * (_movementSpeed * Time.deltaTime);
+            transform.position += transform.right * (MovementSpeed * Time.deltaTime);
         }
 
         public void Shoot()

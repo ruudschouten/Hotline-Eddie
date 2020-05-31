@@ -219,6 +219,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hasSpawnClip: 1
+  spawnClip: {fileID: 8300000, guid: b398df70faaed1a4188434e5256610fb, type: 3}
   shouldMove: 1
   minMaxMovementSpeed:
     min: 5.5
@@ -228,7 +230,6 @@ MonoBehaviour:
   meleeDistance: 1.5
   deadSprite: {fileID: 21300000, guid: da1d17de846922f4ea9c5bf7ce6694ab, type: 3}
   player: {fileID: 0}
-  spawnClip: {fileID: 8300000, guid: b398df70faaed1a4188434e5256610fb, type: 3}
   halfHealthClip: {fileID: 8300000, guid: 5686b7549c89d39469ddd36fc41e74dd, type: 3}
   threeQuartersHealthClip: {fileID: 8300000, guid: 7b7201e419eb3244bb3dbaf7962cf9f4,
     type: 3}
