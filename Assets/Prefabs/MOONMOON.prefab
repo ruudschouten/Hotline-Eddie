@@ -178,8 +178,8 @@ MonoBehaviour:
   rigidbody: {fileID: 3343398118447474543}
   renderer: {fileID: 3343398118447474541}
   collider: {fileID: 3343398118447474540}
-  maxHealth: 500
-  health: 500
+  maxHealth: 750
+  health: 750
   source: {fileID: 5014994339089351284}
   minMaxAudioPitch: {x: 0.75, y: 0.75}
   hitSounds:
@@ -226,9 +226,9 @@ MonoBehaviour:
   spawnClip: {fileID: 8300000, guid: b398df70faaed1a4188434e5256610fb, type: 3}
   shouldMove: 1
   minMaxMovementSpeed:
-    min: 5.5
-    max: 5.5
-  meleeDamage: 10
+    min: 5
+    max: 5
+  meleeDamage: 25
   timeBetweenAttacks: 1
   meleeDistance: 1.5
   deadSprite: {fileID: 21300000, guid: da1d17de846922f4ea9c5bf7ce6694ab, type: 3}
@@ -243,8 +243,8 @@ MonoBehaviour:
   bulletPlacementRandomization: 1.5
   minRangedDistance: 5
   maxRangedDistance: 15
-  bulletsToFireAtOnce: 20
-  secondsBetweenShots: 0.05
+  bulletsToFireAtOnce: 40
+  secondsBetweenShots: 0.025
   rangedCooldown: 5
   onShootEvent:
     m_PersistentCalls:

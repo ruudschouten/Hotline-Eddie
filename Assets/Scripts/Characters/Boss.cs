@@ -169,7 +169,11 @@ namespace Characters
         {
             for (var i = 0; i < bulletsToFireAtOnce; i++)
             {
-                onShootEvent.Invoke();
+                if (i % 10 == 0)
+                {
+                    onShootEvent.Invoke();   
+                }
+                
                 var randomPlacement = new Vector3(Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization),
                     Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization));
                 var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position + randomPlacement, bulletEmitTransform.rotation);
