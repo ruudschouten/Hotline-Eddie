@@ -177,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8959199026005345763
 Transform:
   m_ObjectHideFlags: 0
@@ -221,10 +221,23 @@ MonoBehaviour:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6476739267436825003}
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onGetHit:
     m_PersistentCalls:
       m_Calls: []
+  hasSpawnClip: 1
+  spawnClip: {fileID: 8300000, guid: 176b6c437485b954896081e48c4f64b9, type: 3}
   shouldMove: 0
   minMaxMovementSpeed:
     min: 8
@@ -232,9 +245,8 @@ MonoBehaviour:
   meleeDamage: 0
   timeBetweenAttacks: 0
   meleeDistance: 0
-  deadSprite: {fileID: 0}
+  deadSprite: {fileID: 21300000, guid: 4bff2028373c02745b8740e9115b2a8a, type: 3}
   player: {fileID: 0}
-  spawnClip: {fileID: 8300000, guid: 176b6c437485b954896081e48c4f64b9, type: 3}
   bulletSource: {fileID: 0}
   bulletPrefab: {fileID: 9027969088369609628, guid: 89664277695588747b264d757d3ff9d4,
     type: 3}
