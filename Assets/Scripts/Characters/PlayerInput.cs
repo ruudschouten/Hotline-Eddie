@@ -34,8 +34,18 @@ namespace Characters
             _movementSpeed = baseSpeed;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
+            if (player.IsDead)
+            {
+                return;
+            }
+            
+            if (_shouldMove)
+            {
+                Move();
+            }
+            
             LookAtMouse();
             
             if (_isDashing)
@@ -47,19 +57,6 @@ namespace Characters
             {
                 _isDashing = false;
                 _movementSpeed = baseSpeed;
-            }
-        }
-
-        private void FixedUpdate()
-        {
-            if (player.IsDead)
-            {
-                return;
-            }
-            
-            if (_shouldMove)
-            {
-                Move();
             }
 
             if (!_checkForShooting)
