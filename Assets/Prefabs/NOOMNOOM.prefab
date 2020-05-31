@@ -795,6 +795,24 @@ MonoBehaviour:
   pullPower: 4.5
   pullDuration: 2
   pullCooldown: 3
+  secondBeforePullEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 975579261056085274}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 3a1b73f53adb4d04f8e9d5f8a8f3646f,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPullEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &7383370334310565889
 Rigidbody2D:
   serializedVersion: 4

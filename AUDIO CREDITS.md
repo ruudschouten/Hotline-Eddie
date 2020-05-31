@@ -16,6 +16,7 @@
 - [Magic Smite](https://freesound.org/people/spookymodem/sounds/249819/), CC0 1.0
 - [Squishes](https://freesound.org/people/Eneasz/sounds/216882/), CC0 1.0
 - [Tomato squish;wet](https://freesound.org/people/HonorHunter/sounds/271666/), CC0 1.0
+- [Vacuum Cleaner 01](https://freesound.org/people/Huminaatio/sounds/159348/), CC0 1.0
 
 ## Licences
 
