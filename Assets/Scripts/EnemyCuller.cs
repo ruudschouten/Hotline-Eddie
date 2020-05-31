@@ -14,6 +14,14 @@ public class EnemyCuller : MonoBehaviour
                 if (child.CompareTag("Enemy"))
                 {
                     var enemy = GetComponent<Enemy>();
+                    if (enemy == null)
+                    {
+                        continue;
+                    }
+                    if (enemy.IsDead)
+                    {
+                        continue;
+                    }
                     enemy.GetHit(9999999);
                 }
             }
