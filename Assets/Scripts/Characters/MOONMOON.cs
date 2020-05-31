@@ -16,7 +16,7 @@ namespace Characters
         [SerializeField] protected float rangedCooldown;
         [SerializeField] protected UnityEvent secondBeforeShootEvent;
         [SerializeField] protected UnityEvent onShootEvent;
-        
+
         // We set this to true from the start, so the boss won't shoot as soon as the player sees him.
         private bool _isRangeRecharging = true;
         private float _rangeCooldownTimer;
@@ -30,7 +30,7 @@ namespace Characters
         protected override void UpdateTimers()
         {
             base.UpdateTimers();
-            
+
             if (_isRangeRecharging)
             {
                 _isRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
@@ -53,10 +53,12 @@ namespace Characters
             {
                 return;
             }
+
             if (!shouldMove)
             {
                 return;
             }
+
             Move();
         }
 
@@ -67,22 +69,22 @@ namespace Characters
             {
                 return;
             }
-            
-            // Check if the ranged attack is ready.
-            if (!_isRangeRecharging)
-            {
-                // Check if the player is between the min and max range distances
-                if (Distance >= minRangedDistance && Distance <= maxRangedDistance)
-                {
-                    Shoot();
 
-                    _isRangeRecharging = true;
-                }
-                else
-                {
-                    Move();
-                }
+            // Check if the ranged attack is ready.
+            if (_isRangeRecharging)
+            {
+                return;
             }
+
+            // Check if the player is between the min and max range distances
+            if (!(Distance >= minRangedDistance) || !(Distance <= maxRangedDistance))
+            {
+                return;
+            }
+
+            Shoot();
+
+            _isRangeRecharging = true;
         }
 
         private IEnumerator ShootRoutine()
