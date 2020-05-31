@@ -22,16 +22,16 @@ namespace Waves
         
         private IEnumerator SpawnRoutine(float seconds)
         {
-            waves[_currentWave].Initialize(player, areaSize, enemySpawnLocations, musicPlayer, this);
+            var waveToStart = waves[_currentWave];
+            waveToStart.Initialize(player, areaSize, enemySpawnLocations, musicPlayer, this);
             yield return new WaitForEndOfFrame();
-            waves[_currentWave].StartWaveMusic();
+            waveToStart.StartWaveMusic();
             yield return new WaitForSeconds(seconds);
-            waves[_currentWave].Spawn(false);
+            waveToStart.Spawn(false);
         }
         
         public void StartNextWave(bool playMusic)
         {
-            waves[_currentWave].enabled = false;
             _currentWave++;
             waves[_currentWave].Initialize(player, areaSize, enemySpawnLocations, musicPlayer, this);
             waves[_currentWave].Spawn(playMusic);

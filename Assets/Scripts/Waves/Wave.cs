@@ -9,7 +9,13 @@ namespace Waves
 {
     public class Wave : MonoBehaviour
     {
+        [SerializeField] private bool overrideSpawn;
+
+        [SerializeField] [ShowIf("overrideSpawn")]
+        private Transform spawnPoint;
+
         [SerializeField] private EnemyAmountDictionary enemies;
+        [SerializeField] private int enemyCount;
         [SerializeField] private ConsumableAmountDictionary consumables;
         [SerializeField] private AudioClip waveMusic;
         [SerializeField] private bool hasNextWave;
@@ -18,7 +24,9 @@ namespace Waves
         [SerializeField] [ShowIf("hasNextWave")]
         private Wave nextWave;
 
-        [SerializeField] [ShowIf("hasNextWave")] private bool startNextWaveAfterCooldown;
+        [SerializeField] [ShowIf("hasNextWave")]
+        private bool startNextWaveAfterCooldown;
+
         [SerializeField] [ShowIf("startNextWaveAfterCooldown")]
         private float secondsToWaitBeforeStartingNextWave;
 
@@ -38,14 +46,22 @@ namespace Waves
         private WaveManager _manager;
 
         private bool _started;
-        private int _defeatedEnemies;
+        [ShowNonSerializedField] private int _defeatedEnemies;
 
         public void Initialize(Player player, Rect areaSize, Transform[] spawnLocations, AudioSource musicPlayer,
             WaveManager manager)
         {
             _player = player;
             _areaSize = areaSize;
-            _enemySpawnLocations = spawnLocations;
+            if (!overrideSpawn)
+            {
+                _enemySpawnLocations = spawnLocations;
+            }
+            else
+            {
+                _enemySpawnLocations = new[] {spawnPoint};
+            }
+
             _musicPlayer = musicPlayer;
 
             _manager = manager;
@@ -55,10 +71,10 @@ namespace Waves
         {
             _defeatedEnemies++;
 
-            if (_defeatedEnemies >= enemies.Keys.Count)
+            if (_defeatedEnemies >= enemyCount)
             {
                 onAllEnemiesDefeated.Invoke();
-                
+
                 if (hasNextWave)
                 {
                     if (nextWave.Started)
@@ -104,7 +120,7 @@ namespace Waves
             {
                 if (startNextWaveAfterCooldown)
                 {
-                    StartNextWaveAfter(secondsToWaitBeforeStartingNextWave);   
+                    StartNextWaveAfter(secondsToWaitBeforeStartingNextWave);
                 }
             }
         }
@@ -116,6 +132,7 @@ namespace Waves
                 for (var i = 0; i < pair.Value; i++)
                 {
                     var enemy = Instantiate(pair.Key, GetRandomPosition(), Quaternion.identity);
+                    enemy.transform.SetParent(transform, true);
                     enemy.Initialize(_player);
                     enemy.OnDeathEvent.AddListener(EnemyKilled);
                 }
