@@ -11,12 +11,13 @@ namespace Characters
         [SerializeField] private AudioClip killClip;
         [Space] [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private Transform bulletEmitTransform;
-        [SerializeField] private float bulletPlacementRandomization; 
+        [SerializeField] private float bulletPlacementRandomization;
         [SerializeField] private float minRangedDistance;
         [SerializeField] private float maxRangedDistance;
         [SerializeField] private int bulletsToFireAtOnce;
         [SerializeField] private float secondsBetweenShots;
         [SerializeField] private float rangedCooldown;
+        [SerializeField] private UnityEvent halfASecondBeforeShootEvent;
         [SerializeField] private UnityEvent onShootEvent;
 
         private float _distance;
@@ -31,6 +32,8 @@ namespace Characters
         private bool _playedHalfClip;
         private bool _playedThreeQuartersClip;
         private bool _playedKillClip;
+
+        private bool _shouldInvokeRangeTell;
 
         public void PlayHealthClips()
         {
@@ -57,16 +60,6 @@ namespace Characters
         private bool Between(int lowest, int highest, int value)
         {
             return value <= highest && value >= lowest;
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position, -transform.right * 5);
-            Gizmos.color = Color.blue;
-            Gizmos.DrawCube(transform.position - transform.right * minRangedDistance, new Vector3(1, 1, 1));
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawCube(transform.position - transform.right * maxRangedDistance, new Vector3(1, 1, 1));
         }
 
         private void Update()
@@ -106,6 +99,14 @@ namespace Characters
             if (_isRangeRecharging)
             {
                 _isRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
+                if (_shouldInvokeRangeTell)
+                {
+                    if (_rangeCooldownTimer <= 0.5f)
+                    {
+                        halfASecondBeforeShootEvent.Invoke();
+                        _shouldInvokeRangeTell = false;
+                    }
+                }
             }
 
             if (_isMeleeRecharging)
@@ -171,17 +172,20 @@ namespace Characters
             {
                 if (i % 10 == 0)
                 {
-                    onShootEvent.Invoke();   
+                    onShootEvent.Invoke();
                 }
-                
-                var randomPlacement = new Vector3(Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization),
+
+                var randomPlacement = new Vector3(
+                    Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization),
                     Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization));
-                var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position + randomPlacement, bulletEmitTransform.rotation);
+                var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position + randomPlacement,
+                    bulletEmitTransform.rotation);
                 bullet.ShouldUpdate = true;
 
                 yield return new WaitForSecondsRealtime(secondsBetweenShots);
             }
 
+            _shouldInvokeRangeTell = true;
             _isRangeRecharging = true;
         }
     }

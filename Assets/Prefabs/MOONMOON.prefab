@@ -186,9 +186,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0cd791fa220a5646a59fba305a1c714, type: 3}
   - {fileID: 8300000, guid: 79d63541d84632b4fa9fd32fda94b84a, type: 3}
   - {fileID: 8300000, guid: d8bf3653a98601042acb1323129afd1d, type: 3}
-  - {fileID: 8300000, guid: 63a353d86d2df4a4a9a83e302f6d55b8, type: 3}
-  - {fileID: 8300000, guid: f2a8665d69f327747b6d0d160a383cc5, type: 3}
-  - {fileID: 8300000, guid: 60e2f8f2201249b44bdd408d385eb8c2, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: 2b7c39d5b2980334ea882fe809a63ffb, type: 3}
   onHitTarget:
@@ -246,6 +243,21 @@ MonoBehaviour:
   bulletsToFireAtOnce: 40
   secondsBetweenShots: 0.025
   rangedCooldown: 5
+  halfASecondBeforeShootEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5014994339089351284}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 63a353d86d2df4a4a9a83e302f6d55b8,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onShootEvent:
     m_PersistentCalls:
       m_Calls:
