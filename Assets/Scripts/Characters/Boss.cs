@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace Characters
@@ -11,11 +10,8 @@ namespace Characters
         [SerializeField] protected AudioClip killClip;
         [Space] [SerializeField] protected Bullet bulletPrefab;
         [SerializeField] protected Transform bulletEmitTransform;
-        [SerializeField] protected float bulletPlacementRandomization;
         [SerializeField] protected float minRangedDistance;
         [SerializeField] protected float maxRangedDistance;
-        [SerializeField] protected int bulletsToFireAtOnce;
-        [SerializeField] protected float secondsBetweenShots;
         [SerializeField] protected float rangedCooldown;
         [SerializeField] protected UnityEvent halfASecondBeforeShootEvent;
         [SerializeField] protected UnityEvent onShootEvent;

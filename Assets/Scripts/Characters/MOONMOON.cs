@@ -5,6 +5,10 @@ namespace Characters
 {
     public class MOONMOON : Boss
     {
+        [SerializeField] protected float bulletPlacementRandomization;
+        [SerializeField] protected int bulletsToFireAtOnce;
+        [SerializeField] protected float secondsBetweenShots;
+
         public override void Shoot()
         {
             base.Shoot();
