@@ -783,7 +783,7 @@ MonoBehaviour:
   minMaxMovementSpeed:
     min: 7
     max: 7
-  meleeDamage: 50
+  meleeDamage: 35
   timeBetweenAttacks: 2
   meleeDistance: 2
   deadSprite: {fileID: 0}
