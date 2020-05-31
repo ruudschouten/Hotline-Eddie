@@ -113,9 +113,20 @@ namespace Characters
 
         protected virtual void DetermineAction()
         {
+            CalculateDistance();
+           CheckForShooting();
+           CheckForMelee();
+        }
+
+        protected virtual void CalculateDistance()
+        {
+            
             // Get the distance between the player and the boss.
             Distance = Vector3.Distance(transform.position, player.transform.position);
-            
+        }
+
+        protected virtual void CheckForShooting()
+        {
             // Check if player is outside of melee distance.
             if (Distance >= meleeDistance)
             {
@@ -140,13 +151,14 @@ namespace Characters
                     Move();
                 }
             }
-            else
+        }
+
+        protected virtual void CheckForMelee()
+        {
+            if (!IsMeleeRecharging)
             {
-                if (!IsMeleeRecharging)
-                {
-                    MeleeAttack();
-                    IsMeleeRecharging = true;
-                }
+                MeleeAttack();
+                IsMeleeRecharging = true;
             }
         }
 
