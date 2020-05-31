@@ -235,7 +235,7 @@ MonoBehaviour:
     type: 3}
   killClip: {fileID: 8300000, guid: e54a9dcdce6a6cd4c8fa32de8e0b79de, type: 3}
   bulletPlacementRandomization: 1.5
-  bulletsToFireAtOnce: 40
+  bulletsToFireAtOnce: 32
   secondsBetweenShots: 0.025
   bulletPrefab: {fileID: 7393658555382887175, guid: 8217feacceb02d14082d0baf9e92ca77,
     type: 3}
@@ -243,7 +243,7 @@ MonoBehaviour:
   minRangedDistance: 5
   maxRangedDistance: 15
   rangedCooldown: 5
-  halfASecondBeforeShootEvent:
+  secondBeforeShootEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5014994339089351284}
