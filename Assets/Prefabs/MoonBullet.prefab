@@ -50,8 +50,8 @@ MonoBehaviour:
   renderer: {fileID: 7393658555382887170}
   collider: {fileID: 7393658555382887172}
   shouldUpdate: 1
-  damage: 2
-  speed: 25
+  damage: 4
+  speed: 30
   timesToPierce: 1
   slowerBulletTime: 2.5
   slowSpeed: 5
