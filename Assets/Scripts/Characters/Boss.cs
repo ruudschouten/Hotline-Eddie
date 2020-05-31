@@ -11,6 +11,7 @@ namespace Characters
         [SerializeField] private AudioClip killClip;
         [Space] [SerializeField] private Bullet bulletPrefab;
         [SerializeField] private Transform bulletEmitTransform;
+        [SerializeField] private float bulletPlacementRandomization; 
         [SerializeField] private float minRangedDistance;
         [SerializeField] private float maxRangedDistance;
         [SerializeField] private int bulletsToFireAtOnce;
@@ -169,7 +170,9 @@ namespace Characters
             for (var i = 0; i < bulletsToFireAtOnce; i++)
             {
                 onShootEvent.Invoke();
-                var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position, bulletEmitTransform.rotation);
+                var randomPlacement = new Vector3(Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization),
+                    Random.Range(-bulletPlacementRandomization, bulletPlacementRandomization));
+                var bullet = Instantiate(bulletPrefab, bulletEmitTransform.position + randomPlacement, bulletEmitTransform.rotation);
                 bullet.ShouldUpdate = true;
 
                 yield return new WaitForSecondsRealtime(secondsBetweenShots);
