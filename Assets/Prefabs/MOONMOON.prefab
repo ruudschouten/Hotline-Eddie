@@ -178,8 +178,8 @@ MonoBehaviour:
   rigidbody: {fileID: 3343398118447474543}
   renderer: {fileID: 3343398118447474541}
   collider: {fileID: 3343398118447474540}
-  maxHealth: 750
-  health: 750
+  maxHealth: 650
+  health: 650
   source: {fileID: 5014994339089351284}
   minMaxAudioPitch: {x: 0.75, y: 0.75}
   hitSounds:
@@ -234,14 +234,14 @@ MonoBehaviour:
   threeQuartersHealthClip: {fileID: 8300000, guid: a43d15f934bb0da4e9bfd4855170c74f,
     type: 3}
   killClip: {fileID: 8300000, guid: e54a9dcdce6a6cd4c8fa32de8e0b79de, type: 3}
+  bulletPlacementRandomization: 1.5
+  bulletsToFireAtOnce: 40
+  secondsBetweenShots: 0.025
   bulletPrefab: {fileID: 7393658555382887175, guid: 8217feacceb02d14082d0baf9e92ca77,
     type: 3}
   bulletEmitTransform: {fileID: 6198903495165165774}
-  bulletPlacementRandomization: 1.5
   minRangedDistance: 5
   maxRangedDistance: 15
-  bulletsToFireAtOnce: 40
-  secondsBetweenShots: 0.025
   rangedCooldown: 5
   halfASecondBeforeShootEvent:
     m_PersistentCalls:
@@ -250,7 +250,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: f2a8665d69f327747b6d0d160a383cc5,
+          m_ObjectArgument: {fileID: 8300000, guid: 0fac6ace8f83f4544a48a9181cc42450,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0

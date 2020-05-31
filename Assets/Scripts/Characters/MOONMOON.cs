@@ -49,7 +49,15 @@ namespace Characters
         {
             CalculateDistance();
             CheckForShooting();
-            CheckForMelee();
+            if (ShouldMelee())
+            {
+                return;
+            }
+            if (!shouldMove)
+            {
+                return;
+            }
+            Move();
         }
 
         protected virtual void CheckForShooting()
@@ -74,11 +82,6 @@ namespace Characters
                 {
                     Move();
                 }
-            }
-            else
-            {
-                // If the player is still recharging, move towards the player, hoping to get into melee range.
-                Move();
             }
         }
 
