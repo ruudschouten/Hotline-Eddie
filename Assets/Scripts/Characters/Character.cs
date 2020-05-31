@@ -42,11 +42,19 @@ namespace Characters
         protected void PlayRandomClip(AudioClip[] clips)
         {
             source.pitch = Random.Range(minMaxAudioPitch.x, minMaxAudioPitch.y);
-            source.PlayOneShot(GetRandom(clips));
+            var clip = GetRandom(clips);
+            if (clip != null)
+            {
+                source.PlayOneShot(clip);   
+            }
         }
 
         protected AudioClip GetRandom(AudioClip[] clips)
         {
+            if (clips.Length <= 0)
+            {
+                return null;
+            }
             return clips[Random.Range(0, clips.Length)];
         }
 
