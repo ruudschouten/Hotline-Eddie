@@ -6,6 +6,7 @@ public class Consumable : Trigger
 {
     [SerializeField] private int healAmount;
     [SerializeField] private new SpriteRenderer renderer;
+    [SerializeField] private Transform pickupRadius;
     [SerializeField] private Player player;
 
     private bool _isConsumed;
@@ -30,6 +31,7 @@ public class Consumable : Trigger
 
         player.Heal(healAmount);
         _isConsumed = true;
+        pickupRadius.gameObject.SetActive(false);
         renderer.enabled = false;
         collider.enabled = false;
     }
