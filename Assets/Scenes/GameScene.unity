@@ -9100,6 +9100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideSpawn: 0
+  isBossWave: 0
+  bossHelper: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -9263,6 +9265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideSpawn: 1
+  isBossWave: 1
+  bossHelper: {fileID: 2132007421}
   spawnPoint: {fileID: 818007281}
   enemies:
     m_keys:
@@ -65010,6 +65014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideSpawn: 0
+  isBossWave: 0
+  bossHelper: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -65414,6 +65420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideSpawn: 0
+  isBossWave: 0
+  bossHelper: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -68312,6 +68320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overrideSpawn: 0
+  isBossWave: 0
+  bossHelper: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -74958,13 +74968,36 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1918540034}
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 2132007421}
+        m_MethodName: InstantiateSecondStageContainer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
+          m_FloatArgument: 2.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 787315072}
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 39ea21e3a1000e54cb807d95609813ea,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2132007418}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -75436,8 +75469,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2132007419}
   - component: {fileID: 2132007420}
+  - component: {fileID: 2132007421}
   m_Layer: 5
-  m_Name: Game Won screen
+  m_Name: Fake Game Won screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75472,6 +75506,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132007418}
   m_CullTransparentMesh: 0
+--- !u!114 &2132007421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132007418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415ed64f6ccc416dadc848bc78c4b931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageContainer: {fileID: 9003193536391329648, guid: e158f0b8b1670c9498d9dc45af5ce0b0,
+    type: 3}
 --- !u!1001 &2395989495317931756
 PrefabInstance:
   m_ObjectHideFlags: 0
