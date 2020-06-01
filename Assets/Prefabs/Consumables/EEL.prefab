@@ -117,6 +117,7 @@ MonoBehaviour:
   renderer: {fileID: 7128205921941228277}
   pickupRadius: {fileID: 7128205921327824407}
   player: {fileID: 0}
+  _isConsumed: 0
 --- !u!212 &7128205921941228277
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -226,7 +227,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: abf97412cfe32bf48950f0e8895129ca, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

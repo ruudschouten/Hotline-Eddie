@@ -35,4 +35,30 @@ public class Consumable : Trigger
         renderer.enabled = false;
         collider.enabled = false;
     }
+
+    protected override void HitObject(Collider2D other)
+    {
+        if (PlayedAudio)
+        {
+            return;
+        }
+
+        if (_isConsumed)
+        {
+            return;
+        }
+
+        if (player.Health == player.MaxHealth)
+        {
+            return;
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            PlayedAudio = true;
+            triggerSource.Play();
+
+            playerEnteredEvent.Invoke();
+        }
+    }
 }

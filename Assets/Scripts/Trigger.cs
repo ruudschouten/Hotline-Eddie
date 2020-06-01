@@ -17,7 +17,7 @@ public class Trigger : MonoBehaviour
 
     public BoxCollider2D Collider => collider;
 
-    private bool _playedAudio;
+    protected bool PlayedAudio;
 
     public void DisableCollision()
     {
@@ -36,14 +36,14 @@ public class Trigger : MonoBehaviour
 
     protected virtual void HitObject(Collider2D other)
     {
-        if (_playedAudio)
+        if (PlayedAudio)
         {
             return;
         }
         
         if (other.CompareTag("Player"))
         {
-            _playedAudio = true;
+            PlayedAudio = true;
             triggerSource.Play();
             
             playerEnteredEvent.Invoke();
