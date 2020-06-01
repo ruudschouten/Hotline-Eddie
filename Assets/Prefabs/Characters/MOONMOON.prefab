@@ -241,7 +241,7 @@ MonoBehaviour:
     type: 3}
   bulletEmitTransform: {fileID: 6198903495165165774}
   minRangedDistance: 5
-  maxRangedDistance: 15
+  maxRangedDistance: 25
   rangedCooldown: 5
   secondBeforeShootEvent:
     m_PersistentCalls:
