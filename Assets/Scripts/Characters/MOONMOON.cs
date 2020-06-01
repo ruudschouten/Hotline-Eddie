@@ -13,7 +13,7 @@ namespace Characters
         [SerializeField] protected Transform bulletEmitTransform;
         [SerializeField] protected float minRangedDistance;
         [SerializeField] protected float maxRangedDistance;
-        [SerializeField] protected float rangedCooldown;
+        [SerializeField] protected float rangedCooldown;    
         [SerializeField] protected UnityEvent secondBeforeShootEvent;
         [SerializeField] protected UnityEvent onShootEvent;
 
@@ -36,7 +36,7 @@ namespace Characters
                 _isRangeRecharging = !AdvanceAndCheckTimer(ref _rangeCooldownTimer, rangedCooldown);
                 if (ShouldInvokeRangeTell)
                 {
-                    if (_rangeCooldownTimer <= 1f)
+                    if (_rangeCooldownTimer >= rangedCooldown - 1f)
                     {
                         secondBeforeShootEvent.Invoke();
                         ShouldInvokeRangeTell = false;
