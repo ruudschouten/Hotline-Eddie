@@ -4926,86 +4926,6 @@ Transform:
   m_Father: {fileID: 1989149738}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -42.850002}
---- !u!1 &310285924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 310285925}
-  - component: {fileID: 310285926}
-  m_Layer: 0
-  m_Name: Wave 16
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &310285925
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310285924}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &310285926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 310285924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    m_values: 050000000a00000003000000
-  enemyCount: 18
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 02000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 16
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1365547181}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 40
 --- !u!1 &310441914
 GameObject:
   m_ObjectHideFlags: 0
@@ -5458,26 +5378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 967264667}
-  - {fileID: 1823464601}
-  - {fileID: 1323890162}
-  - {fileID: 1925160115}
-  - {fileID: 815694373}
-  - {fileID: 981060443}
-  - {fileID: 544916560}
-  - {fileID: 430030593}
-  - {fileID: 798008690}
-  - {fileID: 848353085}
-  - {fileID: 454264343}
-  - {fileID: 651013809}
-  - {fileID: 1749559919}
-  - {fileID: 1887685230}
-  - {fileID: 838941971}
-  - {fileID: 310285926}
-  - {fileID: 1365547181}
-  - {fileID: 2135808201}
-  - {fileID: 865626201}
-  - {fileID: 1237679540}
   - {fileID: 998783664}
   enemySpawnLocations:
   - {fileID: 959221499}
@@ -5508,43 +5408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveManager: {fileID: 2090674488}
---- !u!1 &327355445
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 327355446}
-  m_Layer: 5
-  m_Name: Wave Message
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &327355446
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 327355445}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 998552577}
-  - {fileID: 2128590794}
-  m_Father: {fileID: 1401999509}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32, y: -32}
-  m_SizeDelta: {x: 256, y: 96}
-  m_Pivot: {x: 0, y: 1}
 --- !u!1 &328138856
 GameObject:
   m_ObjectHideFlags: 0
@@ -6834,88 +6697,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &430030591
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 430030592}
-  - component: {fileID: 430030593}
-  m_Layer: 0
-  m_Name: Wave 8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &430030592
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430030591}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &430030593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430030591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 5085849842476887315, guid: acea9b06c75831542a630187f406c18b, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 0100000005000000040000000100000002000000
-  enemyCount: 13
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 03000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 798008690}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 15
 --- !u!1 &436645296
 GameObject:
   m_ObjectHideFlags: 0
@@ -7721,87 +7502,6 @@ Transform:
   m_Father: {fileID: 1989149738}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -27.524002}
---- !u!1 &454264341
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 454264342}
-  - component: {fileID: 454264343}
-  m_Layer: 0
-  m_Name: Wave 11
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &454264342
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454264341}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &454264343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454264341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 5085849842476887315, guid: acea9b06c75831542a630187f406c18b, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 05000000060000000100000004000000
-  enemyCount: 16
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 03000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 651013809}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 30
 --- !u!1 &462781468
 GameObject:
   m_ObjectHideFlags: 0
@@ -9257,7 +8957,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 121125029}
-  - {fileID: 1401999509}
   - {fileID: 1608959248}
   - {fileID: 547858999}
   - {fileID: 800735214}
@@ -9567,87 +9266,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &544916558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 544916559}
-  - component: {fileID: 544916560}
-  m_Layer: 0
-  m_Name: Wave 7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &544916559
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544916558}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &544916560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544916558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 02000000040000000400000002000000
-  enemyCount: 12
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 430030593}
-  startNextWaveAfterCooldown: 0
-  secondsToWaitBeforeStartingNextWave: 5
 --- !u!1 &547858998
 GameObject:
   m_ObjectHideFlags: 0
@@ -9681,7 +9299,7 @@ RectTransform:
   - {fileID: 1123383160}
   - {fileID: 1763178655}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11266,86 +10884,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &651013807
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651013808}
-  - component: {fileID: 651013809}
-  m_Layer: 0
-  m_Name: Wave 12
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &651013808
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651013807}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &651013809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651013807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 5085849842476887315, guid: acea9b06c75831542a630187f406c18b, type: 3}
-    m_values: 1e0000000500000002000000
-  enemyCount: 37
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 03000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 12
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1749559919}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 30
 --- !u!1 &651083908
 GameObject:
   m_ObjectHideFlags: 0
@@ -13520,88 +13058,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794018861}
   m_CullTransparentMesh: 0
---- !u!1 &798008688
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 798008689}
-  - component: {fileID: 798008690}
-  m_Layer: 0
-  m_Name: Wave 9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &798008689
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798008688}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &798008690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798008688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 5085849842476887315, guid: acea9b06c75831542a630187f406c18b, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 0f00000004000000040000000100000002000000
-  enemyCount: 26
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 848353085}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 30
 --- !u!1 &799587852
 GameObject:
   m_ObjectHideFlags: 0
@@ -19352,7 +18808,7 @@ RectTransform:
   - {fileID: 525327592}
   - {fileID: 67141462}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19412,7 +18868,7 @@ RectTransform:
   - {fileID: 2083578855}
   - {fileID: 794018862}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -19449,86 +18905,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!1 &815694371
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 815694372}
-  - component: {fileID: 815694373}
-  m_Layer: 0
-  m_Name: Wave 5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &815694372
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815694371}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &815694373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815694371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    m_values: 040000000200000002000000
-  enemyCount: 8
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 981060443}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &818007280
 GameObject:
   m_ObjectHideFlags: 0
@@ -19853,85 +19229,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &838941969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 838941970}
-  - component: {fileID: 838941971}
-  m_Layer: 0
-  m_Name: Wave 15
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &838941970
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838941969}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &838941971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838941969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 8373656356583104425, guid: 6038eb753461c39459e2403a8399e758, type: 3}
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    m_values: 190000000a000000
-  enemyCount: 35
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 02000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 15
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 310285926}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 60
 --- !u!1 &846962007
 GameObject:
   m_ObjectHideFlags: 0
@@ -20013,86 +19310,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &848353083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 848353084}
-  - component: {fileID: 848353085}
-  m_Layer: 0
-  m_Name: Wave 10
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &848353084
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848353083}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &848353085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848353083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 8373656356583104425, guid: 6038eb753461c39459e2403a8399e758, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    m_values: 0f0000000500000001000000
-  enemyCount: 21
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 03000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 454264343}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &855987528
 GameObject:
   m_ObjectHideFlags: 0
@@ -20174,89 +19391,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &865626199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 865626200}
-  - component: {fileID: 865626201}
-  m_Layer: 0
-  m_Name: Wave 19
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &865626200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865626199}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &865626201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865626199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    - {fileID: 5085849842476887315, guid: acea9b06c75831542a630187f406c18b, type: 3}
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    m_values: 060000000600000001000000020000000100000006000000
-  enemyCount: 22
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 03000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 19
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1237679540}
-  startNextWaveAfterCooldown: 0
-  secondsToWaitBeforeStartingNextWave: 5
 --- !u!1 &881642742
 GameObject:
   m_ObjectHideFlags: 0
@@ -22510,94 +21644,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &967264665
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 967264666}
-  - component: {fileID: 967264667}
-  m_Layer: 0
-  m_Name: Wave 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &967264666
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967264665}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &967264667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967264665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    m_values: 04000000
-  enemyCount: 4
-  consumables:
-    m_keys: []
-    m_values: 
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 327355445}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1823464601}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 8
 --- !u!1 &969984204
 GameObject:
   m_ObjectHideFlags: 0
@@ -22783,85 +21829,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &981060441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 981060442}
-  - component: {fileID: 981060443}
-  m_Layer: 0
-  m_Name: Wave 6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &981060442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981060441}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &981060443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981060441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    m_values: 0200000001000000
-  enemyCount: 3
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 544916560}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &984033614
 GameObject:
   m_ObjectHideFlags: 0
@@ -23105,80 +22072,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &998552576
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 998552577}
-  - component: {fileID: 998552579}
-  - component: {fileID: 998552578}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &998552577
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998552576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 327355446}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &998552578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998552576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9f7ec51a130084742b24fe4feb9d3f67, type: 3}
-  m_Type: 2
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &998552579
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998552576}
-  m_CullTransparentMesh: 0
 --- !u!1 &998783662
 GameObject:
   m_ObjectHideFlags: 0
@@ -23208,7 +22101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2090674488}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &998783664
 MonoBehaviour:
@@ -23240,17 +22133,6 @@ MonoBehaviour:
   onWaveStartEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetText
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Final Wave
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1562121271}
         m_MethodName: SetActive
         m_Mode: 6
@@ -23297,17 +22179,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1401999508}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
   nextWave: {fileID: 0}
   startNextWaveAfterCooldown: 0
@@ -81904,77 +80775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcb6d37743542f1b8ac282cabb79953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1237679538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1237679539}
-  - component: {fileID: 1237679540}
-  m_Layer: 0
-  m_Name: Final Wave Extra Spawns
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1237679539
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237679538}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1237679540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237679538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    m_values: 0400000004000000010000000100000005000000
-  enemyCount: 15
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 02000000
-  waveMusic: {fileID: 8300000, guid: 3bf3b879be8848d47865d01fb8bfa9cc, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 998783664}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 1
 --- !u!1 &1245825812
 GameObject:
   m_ObjectHideFlags: 0
@@ -83613,84 +82413,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1323890160
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1323890161}
-  - component: {fileID: 1323890162}
-  m_Layer: 0
-  m_Name: Wave 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1323890161
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323890160}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1323890162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323890160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    m_values: 0a00000001000000
-  enemyCount: 11
-  consumables:
-    m_keys: []
-    m_values: 
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1925160115}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &1326097660
 GameObject:
   m_ObjectHideFlags: 0
@@ -84258,86 +82980,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1365547179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1365547180}
-  - component: {fileID: 1365547181}
-  m_Layer: 0
-  m_Name: Wave 17
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1365547180
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365547179}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1365547181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365547179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 16511810336796686, guid: 7501bcdd597570744a44b7d979133ec2, type: 3}
-    m_values: 220000000700000001000000
-  enemyCount: 42
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 02000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 17
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 2135808201}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 60
 --- !u!1 &1369340267
 GameObject:
   m_ObjectHideFlags: 0
@@ -84500,56 +83142,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1401999508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1401999509}
-  - component: {fileID: 1401999510}
-  m_Layer: 5
-  m_Name: Wave UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1401999509
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401999508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 327355446}
-  m_Father: {fileID: 529579408}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1401999510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401999508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5224ca853a3447988a345bd3d31be17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messageText: {fileID: 2128590795}
 --- !u!1 &1402195345
 GameObject:
   m_ObjectHideFlags: 0
@@ -87039,7 +85631,7 @@ RectTransform:
   - {fileID: 2066714463}
   - {fileID: 1681145745}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -87618,7 +86210,7 @@ RectTransform:
   - {fileID: 1562709706}
   - {fileID: 530807032}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -88350,7 +86942,7 @@ RectTransform:
   - {fileID: 1463816439}
   - {fileID: 1729340300}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -90635,7 +89227,7 @@ RectTransform:
   - {fileID: 1644373110}
   - {fileID: 1169506755}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -91332,84 +89924,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1749559917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1749559918}
-  - component: {fileID: 1749559919}
-  m_Layer: 0
-  m_Name: Wave 13
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1749559918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749559917}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1749559919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749559917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 06000000
-  enemyCount: 6
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 13
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1887685230}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 45
 --- !u!1 &1754934042
 GameObject:
   m_ObjectHideFlags: 0
@@ -91498,7 +90012,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -93376,83 +91890,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1823464599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1823464600}
-  - component: {fileID: 1823464601}
-  m_Layer: 0
-  m_Name: Wave 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1823464600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823464599}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1823464601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823464599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    m_values: 0a000000
-  enemyCount: 10
-  consumables:
-    m_keys: []
-    m_values: 
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 1323890162}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 15
 --- !u!1 &1824128671
 GameObject:
   m_ObjectHideFlags: 0
@@ -100118,86 +98555,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1887685228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1887685229}
-  - component: {fileID: 1887685230}
-  m_Layer: 0
-  m_Name: Wave 14
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1887685229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887685228}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1887685230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887685228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    - {fileID: 357446055153003877, guid: 8b17151a27870864ba80c1c5c1decb89, type: 3}
-    m_values: 0f0000000600000002000000
-  enemyCount: 23
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 02000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 14
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 838941971}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &1899594379
 GameObject:
   m_ObjectHideFlags: 0
@@ -100497,7 +98854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Just the boss please
+  m_text: The regular fight please
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c414e86690c460947acf98770582cb0e, type: 2}
   m_sharedMaterial: {fileID: -87447875693085555, guid: c414e86690c460947acf98770582cb0e,
@@ -100567,10 +98924,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1914876106}
-    characterCount: 26
+    characterCount: 24
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 2
     pageCount: 1
@@ -100701,7 +99058,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 529579408}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -100720,108 +99077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bf1a56874d43769182baf61b75ec05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1925160113
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1925160114}
-  - component: {fileID: 1925160115}
-  m_Layer: 0
-  m_Name: Wave 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1925160114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925160113}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1925160115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925160113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    - {fileID: 6476739267436825003, guid: 0f3a4a98a296cef47870af016faca009, type: 3}
-    - {fileID: 2224625692214399916, guid: 50246953bbd592b42bf89c2bb7c0ea6d, type: 3}
-    m_values: 040000000100000002000000
-  enemyCount: 7
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 01000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1716595073}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1716595075}
-        m_MethodName: ShowAndHide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 815694373}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 20
 --- !u!1 &1946810617
 GameObject:
   m_ObjectHideFlags: 0
@@ -102766,7 +101021,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -104098,26 +102353,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 967264666}
-  - {fileID: 1823464600}
-  - {fileID: 1323890161}
-  - {fileID: 1925160114}
-  - {fileID: 815694372}
-  - {fileID: 981060442}
-  - {fileID: 544916559}
-  - {fileID: 430030592}
-  - {fileID: 798008689}
-  - {fileID: 848353084}
-  - {fileID: 454264342}
-  - {fileID: 651013808}
-  - {fileID: 1749559918}
-  - {fileID: 1887685229}
-  - {fileID: 838941970}
-  - {fileID: 310285925}
-  - {fileID: 1365547180}
-  - {fileID: 2135808200}
-  - {fileID: 865626200}
-  - {fileID: 1237679539}
   - {fileID: 998783663}
   m_Father: {fileID: 325601565}
   m_RootOrder: 0
@@ -104520,163 +102755,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2128590793
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2128590794}
-  - component: {fileID: 2128590796}
-  - component: {fileID: 2128590795}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2128590794
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128590793}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 327355446}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2128590795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128590793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Wave: 0'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c414e86690c460947acf98770582cb0e, type: 2}
-  m_sharedMaterial: {fileID: -87447875693085555, guid: c414e86690c460947acf98770582cb0e,
-    type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 514
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 24
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
-  m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
-  m_isTextTruncated: 0
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_ignoreRectMaskCulling: 0
-  m_ignoreCulling: 1
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 10, y: 0, z: 10, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 2128590795}
-    characterCount: 7
-    spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &2128590796
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128590793}
-  m_CullTransparentMesh: 0
 --- !u!1 &2129263867
 GameObject:
   m_ObjectHideFlags: 0
@@ -105028,7 +103106,7 @@ RectTransform:
   - {fileID: 1119796719}
   - {fileID: 2062218403}
   m_Father: {fileID: 529579408}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -105138,86 +103216,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2135808199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2135808200}
-  - component: {fileID: 2135808201}
-  m_Layer: 0
-  m_Name: Wave 18
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2135808200
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135808199}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2090674488}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2135808201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135808199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52509fa21dc4dbaac80a73fad567c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideSpawn: 0
-  isBossWave: 0
-  bossHelper: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  enemies:
-    m_keys:
-    - {fileID: 16511810336796686, guid: 7501bcdd597570744a44b7d979133ec2, type: 3}
-    - {fileID: 7006042900566408698, guid: 4d54dcc979f54f942946fe1090c5a988, type: 3}
-    - {fileID: 9111647515017247989, guid: 11d2c8a1b7e8c3d4c9928dc8620a4804, type: 3}
-    m_values: 020000000f00000005000000
-  enemyCount: 22
-  consumables:
-    m_keys:
-    - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
-    m_values: 02000000
-  waveMusic: {fileID: 8300000, guid: 20695660aeb9a1640ac2ce5fc50b5099, type: 3}
-  hasNextWave: 1
-  onWaveStartEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401999510}
-        m_MethodName: SetWaveNumber
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 18
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onAllEnemiesDefeated:
-    m_PersistentCalls:
-      m_Calls: []
-  nextWave: {fileID: 865626201}
-  startNextWaveAfterCooldown: 1
-  secondsToWaitBeforeStartingNextWave: 40
 --- !u!1 &2136828093
 GameObject:
   m_ObjectHideFlags: 0
