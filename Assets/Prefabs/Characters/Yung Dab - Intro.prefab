@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 8959199026005345765}
   - component: {fileID: 1705610900709466364}
   m_Layer: 0
-  m_Name: Yung Dab
+  m_Name: Yung Dab - Intro
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

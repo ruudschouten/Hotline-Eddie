@@ -50,8 +50,8 @@ MonoBehaviour:
   rigidbody: {fileID: 9111647515017247984}
   renderer: {fileID: 9111647515017247986}
   collider: {fileID: 9111647515017247987}
-  maxHealth: 20
-  health: 20
+  maxHealth: 25
+  health: 25
   source: {fileID: 1553151689919109611}
   minMaxAudioPitch: {x: 0.75, y: 1.25}
   hitSounds:
@@ -82,6 +82,8 @@ MonoBehaviour:
   onGetHit:
     m_PersistentCalls:
       m_Calls: []
+  hasSpawnClip: 0
+  spawnClip: {fileID: 0}
   shouldMove: 1
   minMaxMovementSpeed:
     min: 8

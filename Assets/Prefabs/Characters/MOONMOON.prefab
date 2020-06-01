@@ -178,8 +178,8 @@ MonoBehaviour:
   rigidbody: {fileID: 3343398118447474543}
   renderer: {fileID: 3343398118447474541}
   collider: {fileID: 3343398118447474540}
-  maxHealth: 650
-  health: 650
+  maxHealth: 850
+  health: 850
   source: {fileID: 5014994339089351284}
   minMaxAudioPitch: {x: 0.75, y: 0.75}
   hitSounds:
