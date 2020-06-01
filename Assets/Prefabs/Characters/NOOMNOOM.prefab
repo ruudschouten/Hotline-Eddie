@@ -799,8 +799,8 @@ MonoBehaviour:
   rigidbody: {fileID: 7383370334310565889}
   renderer: {fileID: 7383370334310565891}
   collider: {fileID: 7383370334310565890}
-  maxHealth: 500
-  health: 500
+  maxHealth: 505
+  health: 505
   source: {fileID: 975579261056085274}
   minMaxAudioPitch: {x: 0.6, y: 0.6}
   hitSounds:
@@ -880,7 +880,7 @@ MonoBehaviour:
     min: 6.5
     max: 6.5
   meleeDamage: 35
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 1.75
   meleeDistance: 2
   deadSprite: {fileID: 0}
   player: {fileID: 0}
@@ -888,9 +888,17 @@ MonoBehaviour:
   threeQuartersHealthClip: {fileID: 8300000, guid: 7b7201e419eb3244bb3dbaf7962cf9f4,
     type: 3}
   killClip: {fileID: 8300000, guid: e54a9dcdce6a6cd4c8fa32de8e0b79de, type: 3}
+  bodyPartHelper: {fileID: 813004097}
+  teleportRangeModifier: 1.45
+  areaSize:
+    serializedVersion: 2
+    x: -42
+    y: 46
+    width: -30
+    height: 20
   pullPower: 4.5
   pullDuration: 2
-  pullCooldown: 3
+  pullCooldown: 4
   poisonPile: {fileID: 6854897979457775553, guid: 7e86b56b235bf7e45954d69416c57e0a,
     type: 3}
   poisonPileLocation: {fileID: 3561654503565687652}
@@ -904,6 +912,20 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: 3a1b73f53adb4d04f8e9d5f8a8f3646f,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  secondAfterPullEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6736912871217738338}
+        m_MethodName: TeleportBehind
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1474,6 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8181102831440133848}
+  - component: {fileID: 813004097}
   m_Layer: 0
   m_Name: Bodyparts
   m_TagString: Untagged
@@ -1501,6 +1524,25 @@ Transform:
   m_Father: {fileID: 8181102831294202405}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813004097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181102831440133863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e4e98341ad4264b9c04d9846c4e6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts:
+  - {fileID: 8181102832385728273}
+  - {fileID: 8181102832630490598}
+  - {fileID: 8181102831321167876}
+  - {fileID: 8181102831672167784}
+  - {fileID: 8181102832647101470}
+  - {fileID: 8181102832585151752}
 --- !u!1 &8181102831600198333
 GameObject:
   m_ObjectHideFlags: 0

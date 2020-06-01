@@ -11,6 +11,8 @@ namespace Characters
         [SerializeField] private Transform partToFollow;
         [SerializeField] private float minimumDistance;
 
+        public float MinimumDistance => minimumDistance;
+
         public Character Character => character;
 
         private void Update()
