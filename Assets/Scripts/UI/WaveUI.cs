@@ -9,7 +9,7 @@ namespace UI
 
         public void SetWaveNumber(int number)
         {
-            messageText.text = $"Wave {number:00}";
+            messageText.text = $"Wave {number:00}/20";
         }
 
         public void SetText(string text)
