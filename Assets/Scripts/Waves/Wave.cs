@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Characters;
+using DefaultNamespace;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,6 +13,7 @@ namespace Waves
         [SerializeField] private bool overrideSpawn;
         [SerializeField] [ShowIf("overrideSpawn")] private bool isBossWave;
         [SerializeField] [ShowIf("isBossWave")] private FinalBossHelper bossHelper;
+        [SerializeField] [ShowIf("isBossWave")] private ConsumableSpawner consumableSpawner;
 
         [SerializeField] [ShowIf("overrideSpawn")]
         private Transform spawnPoint;
@@ -140,6 +142,7 @@ namespace Waves
                     if (isBossWave)
                     {
                         bossHelper.FirstStage = (Boss) enemy;
+                        consumableSpawner.Boss = (Boss) enemy;
                     }
                     enemy.transform.SetParent(transform, true);
                     enemy.Initialize(_player);

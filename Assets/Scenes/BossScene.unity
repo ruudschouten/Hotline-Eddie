@@ -7853,7 +7853,6 @@ MonoBehaviour:
   consumable: {fileID: 8456937594086571374, guid: ae305f402578e51418854b86b421e933,
     type: 3}
   player: {fileID: 952122208}
-  distance: 0.5
 --- !u!4 &482218273
 Transform:
   m_ObjectHideFlags: 0
@@ -22165,6 +22164,7 @@ MonoBehaviour:
   overrideSpawn: 1
   isBossWave: 1
   bossHelper: {fileID: 2132007421}
+  consumableSpawner: {fileID: 482218272}
   spawnPoint: {fileID: 818007281}
   enemies:
     m_keys:
@@ -22228,7 +22228,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 482218272}
-        m_MethodName: Spawn
+        m_MethodName: SpawnAtBoss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

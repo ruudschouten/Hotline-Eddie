@@ -4972,6 +4972,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -6880,6 +6881,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -7767,6 +7769,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -9613,6 +9616,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -11312,6 +11316,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -13566,6 +13571,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -19495,6 +19501,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -19899,13 +19906,14 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
     - {fileID: 8373656356583104425, guid: 6038eb753461c39459e2403a8399e758, type: 3}
     - {fileID: 128153903938179872, guid: 751fea15af108ea42aa32b916de35527, type: 3}
-    m_values: 190000000a000000
-  enemyCount: 35
+    m_values: 0f0000000a000000
+  enemyCount: 25
   consumables:
     m_keys:
     - {fileID: 7128205921941228273, guid: 96096580af0ba8a46b0e2663b6031ea3, type: 3}
@@ -20059,6 +20067,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -20220,6 +20229,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -22556,6 +22566,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -22829,6 +22840,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -23225,6 +23237,7 @@ MonoBehaviour:
   overrideSpawn: 1
   isBossWave: 1
   bossHelper: {fileID: 2132007421}
+  consumableSpawner: {fileID: 1984464516}
   spawnPoint: {fileID: 818007281}
   enemies:
     m_keys:
@@ -23310,7 +23323,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1984464516}
-        m_MethodName: Spawn
+        m_MethodName: SpawnAtBoss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -81961,6 +81974,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -83670,6 +83684,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -84315,6 +84330,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -91389,6 +91405,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -93433,6 +93450,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -100175,6 +100193,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -100777,6 +100796,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
@@ -105241,6 +105261,7 @@ MonoBehaviour:
   overrideSpawn: 0
   isBossWave: 0
   bossHelper: {fileID: 0}
+  consumableSpawner: {fileID: 0}
   spawnPoint: {fileID: 0}
   enemies:
     m_keys:
