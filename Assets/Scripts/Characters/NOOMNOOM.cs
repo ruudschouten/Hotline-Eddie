@@ -8,6 +8,8 @@ namespace Characters
         [SerializeField] private float pullPower;
         [SerializeField] private float pullDuration;
         [SerializeField] private float pullCooldown;
+        [SerializeField] private TimedTrigger poisonPile;
+        [SerializeField] private Transform poisonPileLocation;
         [SerializeField] private UnityEvent secondBeforePullEvent;
         [SerializeField] private UnityEvent onPullEvent;
 
@@ -87,6 +89,11 @@ namespace Characters
         private void PullPlayer()
         {
             player.transform.position += transform.right * (pullPower * Time.deltaTime);
+        }
+
+        public void SpitPoison()
+        {
+            Instantiate(poisonPile, poisonPileLocation.position, poisonPileLocation.rotation);
         }
     }
 }
