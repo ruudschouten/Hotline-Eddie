@@ -25,6 +25,10 @@ namespace Characters
             set
             {
                 stamina = value;
+                if (stamina > _maxStamina)
+                {
+                    stamina = _maxStamina;
+                }
                 _isStaminaRegenerating = false;
                 _staminaRegenTimer = 0;
                 onStaminaUse.Invoke();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Consumable : Trigger
 {
     [SerializeField] private int healAmount;
+    [SerializeField] private int staminaRecovered;
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private Transform pickupRadius;
     [SerializeField] private Player player;
@@ -29,6 +30,7 @@ public class Consumable : Trigger
             return;
         }
 
+        player.Stamina += staminaRecovered;
         player.Heal(healAmount);
         _isConsumed = true;
         pickupRadius.gameObject.SetActive(false);
@@ -47,7 +49,7 @@ public class Consumable : Trigger
         {
             return;
         }
-
+        
         if (player.Health == player.MaxHealth)
         {
             return;
